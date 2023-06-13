@@ -1,0 +1,451 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Jun 12 16:35:33 2023
+# Process ID: 9304
+# Current directory: /home/user/matrixkeyboard/matrixkeyboard.runs/synth_1
+# Command line: vivado -log pmod_keypad.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pmod_keypad.tcl
+# Log file: /home/user/matrixkeyboard/matrixkeyboard.runs/synth_1/pmod_keypad.vds
+# Journal file: /home/user/matrixkeyboard/matrixkeyboard.runs/synth_1/vivado.jou
+# Running On: 1608755d96df, OS: Linux, CPU Frequency: , CPU Physical cores: 1, Host memory: 8233 MB
+#-----------------------------------------------------------
+source pmod_keypad.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1553.328 ; gain = 27.156 ; free physical = 1165 ; free virtual = 4620
+Command: read_checkpoint -auto_incremental -incremental /home/user/matrixkeyboard/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/matrixkeyboard/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top pmod_keypad -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9345
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/home/user/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2307.887 ; gain = 378.035 ; free physical = 389 ; free virtual = 3844
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1485.591; parent = 1475.855; children = 9.735
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2869.777; parent = 2307.918; children = 561.859
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'pmod_keypad' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:17]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+INFO: [Synth 8-638] synthesizing module 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:253]
+INFO: [Synth 8-3491] module 'decoderkeys' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:34' bound to instance 'calldecoder' of component 'decoderkeys' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:258]
+INFO: [Synth 8-638] synthesizing module 'decoderkeys' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'decoderkeys' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'pmod_keypad' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:17]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2380.906 ; gain = 451.055 ; free physical = 383 ; free virtual = 3838
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1524.223; parent = 1475.855; children = 148.053
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3587.953; parent = 2380.906; children = 1207.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2399.387 ; gain = 469.535 ; free physical = 361 ; free virtual = 3816
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1544.970; parent = 1475.855; children = 170.475
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3657.047; parent = 2399.387; children = 1257.660
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2399.387 ; gain = 469.535 ; free physical = 359 ; free virtual = 3814
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1567.376; parent = 1475.855; children = 192.881
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3677.430; parent = 2399.387; children = 1278.043
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2400.043 ; gain = 0.051 ; free physical = 357 ; free virtual = 3812
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pmod_keypad_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/pmod_keypad_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2536.281 ; gain = 0.000 ; free physical = 147 ; free virtual = 3579
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2536.344 ; gain = 0.047 ; free physical = 147 ; free virtual = 3579
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/home/user/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.211 ; gain = 613.359 ; free physical = 189 ; free virtual = 3622
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1805.929; parent = 1475.855; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.137; parent = 2543.211; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.336 ; gain = 613.484 ; free physical = 189 ; free virtual = 3623
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1805.929; parent = 1475.855; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.262; parent = 2543.336; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2543.383 ; gain = 613.531 ; free physical = 189 ; free virtual = 3622
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1805.929; parent = 1475.855; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4042.309; parent = 2543.383; children = 1498.926
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'columns_reg' in module 'pmod_keypad'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE7 |                      00000000001 |                             1111
+                 iSTATE5 |                      00000000010 |                             0111
+                 iSTATE2 |                      00000000100 |                             1011
+                 iSTATE0 |                      00000001000 |                             1101
+                 iSTATE8 |                      00000010000 |                             1110
+                  iSTATE |                      00000100000 |                             0011
+                 iSTATE9 |                      00001000000 |                             0101
+                 iSTATE6 |                      00010000000 |                             0110
+                 iSTATE4 |                      00100000000 |                             1001
+                 iSTATE3 |                      01000000000 |                             1010
+                 iSTATE1 |                      10000000000 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'columns_reg' using encoding 'one-hot' in module 'pmod_keypad'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2544.773 ; gain = 614.922 ; free physical = 170 ; free virtual = 3604
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1805.929; parent = 1475.855; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4043.699; parent = 2544.773; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    5 Bit       Adders := 1     
+	  16 Input    5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 16    
++---Registers : 
+	               16 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 16    
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 27    
+	  11 Input   16 Bit        Muxes := 4     
+	   2 Input   15 Bit        Muxes := 2     
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	  18 Input    5 Bit        Muxes := 1     
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2546.254 ; gain = 616.402 ; free physical = 153 ; free virtual = 3590
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1805.929; parent = 1475.855; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4045.180; parent = 2546.254; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 2590.383 ; gain = 660.531 ; free physical = 114 ; free virtual = 3372
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1986.756; parent = 1644.162; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.309; parent = 2590.383; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 2590.410 ; gain = 660.559 ; free physical = 114 ; free virtual = 3372
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1986.982; parent = 1644.389; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.336; parent = 2590.410; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2590.613 ; gain = 660.762 ; free physical = 115 ; free virtual = 3373
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1990.652; parent = 1648.059; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.539; parent = 2590.613; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.762 ; gain = 660.910 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1991.695; parent = 1649.102; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.688; parent = 2590.762; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.777 ; gain = 660.926 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1991.777; parent = 1649.184; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.703; parent = 2590.777; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.824 ; gain = 660.973 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1992.137; parent = 1649.543; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.750; parent = 2590.824; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.836 ; gain = 660.984 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1992.223; parent = 1649.629; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.762; parent = 2590.836; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.859 ; gain = 661.008 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1992.371; parent = 1649.777; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.785; parent = 2590.859; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.863 ; gain = 661.012 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1992.402; parent = 1649.809; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.789; parent = 2590.863; children = 1498.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    80|
+|3     |LUT1   |    17|
+|4     |LUT2   |    58|
+|5     |LUT3   |    19|
+|6     |LUT4   |    84|
+|7     |LUT5   |    46|
+|8     |LUT6   |    59|
+|9     |FDCE   |    90|
+|10    |FDPE   |     1|
+|11    |FDRE   |   345|
+|12    |IBUF   |     6|
+|13    |OBUF   |     9|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.895 ; gain = 661.043 ; free physical = 112 ; free virtual = 3370
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1992.543; parent = 1649.949; children = 342.882
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4089.820; parent = 2590.895; children = 1498.926
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 2590.926 ; gain = 523.762 ; free physical = 166 ; free virtual = 3425
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 2590.957 ; gain = 661.074 ; free physical = 166 ; free virtual = 3425
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2591.379 ; gain = 0.004 ; free physical = 343 ; free virtual = 3602
+INFO: [Netlist 29-17] Analyzing 80 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 6 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2593.340 ; gain = 0.000 ; free physical = 343 ; free virtual = 3602
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: ab9cd6a9
+INFO: [Common 17-83] Releasing license: Synthesis
+48 Infos, 33 Warnings, 32 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 2593.391 ; gain = 1015.012 ; free physical = 548 ; free virtual = 3807
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/user/matrixkeyboard/matrixkeyboard.runs/synth_1/pmod_keypad.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file pmod_keypad_utilization_synth.rpt -pb pmod_keypad_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 12 16:36:25 2023...

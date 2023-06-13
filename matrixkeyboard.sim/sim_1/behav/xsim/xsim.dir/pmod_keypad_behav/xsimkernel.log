@@ -1,0 +1,4 @@
+Running: xsim.dir/pmod_keypad_behav/xsimk.exe -simmode gui -wdb pmod_keypad_behav.wdb -simrunnum 0 -socket 52354
+Design successfully loaded
+Design Loading Memory Usage: 8512 KB (Peak: 8512 KB)
+Design Loading CPU Usage: 15 ms

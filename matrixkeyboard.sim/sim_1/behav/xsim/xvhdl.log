@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'debounce'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'decoderkeys'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pmod_keypad'

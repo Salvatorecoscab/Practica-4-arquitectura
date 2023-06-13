@@ -34,7 +34,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity decoderkeys is
  port(
     keycode: in std_logic_vector(0 to 15);
-    numEn:  out std_logic_vector(0 to 4)
+    numEn:  out std_logic_vector(4 downto 0)
  );
 end decoderkeys;
 

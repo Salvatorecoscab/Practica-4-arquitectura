@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date         : Mon Jun 12 17:51:53 2023
-| Host         : 1608755d96df running 64-bit Ubuntu 22.04.2 LTS
+| Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date         : Tue Jun 13 04:18:53 2023
+| Host         : Salvatore running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file pmod_keypad_timing_summary_routed.rpt -pb pmod_keypad_timing_summary_routed.pb -rpx pmod_keypad_timing_summary_routed.rpx -warn_on_violation
 | Design       : pmod_keypad
 | Device       : 7a35t-cpg236
@@ -41,7 +41,7 @@ Timing Summary Report
 
 Rule       Severity          Description                  Violations  
 ---------  ----------------  ---------------------------  ----------  
-TIMING-17  Critical Warning  Non-clocked sequential cell  436         
+TIMING-17  Critical Warning  Non-clocked sequential cell  502         
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -51,12 +51,12 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (436)
+1. checking no_clock (502)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (1231)
-5. checking no_input_delay (5)
-6. checking no_output_delay (9)
+4. checking unconstrained_internal_endpoints (1402)
+5. checking no_input_delay (6)
+6. checking no_output_delay (15)
 7. checking multiple_clock (0)
 8. checking generated_clocks (0)
 9. checking loops (0)
@@ -64,9 +64,9 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (436)
+1. checking no_clock (502)
 --------------------------
- There are 436 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 502 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
 
 2. checking constant_clock (0)
@@ -79,23 +79,23 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (1231)
+4. checking unconstrained_internal_endpoints (1402)
 ---------------------------------------------------
- There are 1231 pins that are not constrained for maximum delay. (HIGH)
+ There are 1402 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
-5. checking no_input_delay (5)
+5. checking no_input_delay (6)
 ------------------------------
- There are 5 input ports with no input delay specified. (HIGH)
+ There are 6 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
-6. checking no_output_delay (9)
--------------------------------
- There are 9 ports with no output delay specified. (HIGH)
+6. checking no_output_delay (15)
+--------------------------------
+ There are 15 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -140,7 +140,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                 1240          inf        0.000                      0                 1240           NA           NA                      NA                    NA  
+        inf        0.000                      0                 1417          inf        0.000                      0                 1417           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -209,98 +209,86 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          1240 Endpoints
-Min Delay          1240 Endpoints
+Max Delay          1417 Endpoints
+Min Delay          1417 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 row_debounce[3].debounce_keys/result_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            hexnum[0]
-                            (output port)
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[11]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        12.136ns  (logic 4.790ns (39.466%)  route 7.347ns (60.534%))
-  Logic Levels:           5  (FDCE=1 LUT5=2 LUT6=1 OBUF=1)
+  Data Path Delay:        9.590ns  (logic 1.704ns (17.771%)  route 7.885ns (82.229%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y92          FDCE                         0.000     0.000 r  row_debounce[3].debounce_keys/result_reg/C
-    SLICE_X4Y92          FDCE (Prop_fdce_C_Q)         0.456     0.456 f  row_debounce[3].debounce_keys/result_reg/Q
-                         net (fo=7, routed)           1.147     1.603    calldecoder/sel0[3]
-    SLICE_X11Y90         LUT5 (Prop_lut5_I1_O)        0.150     1.753 r  calldecoder/hexnum_OBUF[0]_inst_i_7/O
-                         net (fo=3, routed)           0.671     2.424    calldecoder/hexnum_OBUF[0]_inst_i_7_n_0
-    SLICE_X10Y90         LUT5 (Prop_lut5_I4_O)        0.352     2.776 r  calldecoder/hexnum_OBUF[0]_inst_i_2/O
-                         net (fo=1, routed)           0.824     3.599    calldecoder/hexnum_OBUF[0]_inst_i_2_n_0
-    SLICE_X10Y89         LUT6 (Prop_lut6_I0_O)        0.328     3.927 r  calldecoder/hexnum_OBUF[0]_inst_i_1/O
-                         net (fo=1, routed)           4.705     8.633    hexnum_OBUF[0]
-    U3                   OBUF (Prop_obuf_I_O)         3.504    12.136 r  hexnum_OBUF[0]_inst/O
-                         net (fo=0)                   0.000    12.136    hexnum[0]
-    U3                                                                r  hexnum[0] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[14].debounce_keys/result_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            hexnum[3]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.621ns  (logic 4.405ns (41.477%)  route 6.216ns (58.523%))
-  Logic Levels:           5  (FDCE=1 LUT2=1 LUT6=2 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X6Y89          FDCE                         0.000     0.000 r  row_debounce[14].debounce_keys/result_reg/C
-    SLICE_X6Y89          FDCE (Prop_fdce_C_Q)         0.518     0.518 f  row_debounce[14].debounce_keys/result_reg/Q
-                         net (fo=9, routed)           1.293     1.811    calldecoder/sel0[14]
-    SLICE_X11Y89         LUT2 (Prop_lut2_I0_O)        0.124     1.935 r  calldecoder/hexnum_OBUF[3]_inst_i_4/O
-                         net (fo=1, routed)           0.667     2.602    calldecoder/hexnum_OBUF[3]_inst_i_4_n_0
-    SLICE_X11Y89         LUT6 (Prop_lut6_I0_O)        0.124     2.726 r  calldecoder/hexnum_OBUF[3]_inst_i_3/O
-                         net (fo=1, routed)           0.433     3.159    calldecoder/hexnum_OBUF[3]_inst_i_3_n_0
-    SLICE_X11Y89         LUT6 (Prop_lut6_I5_O)        0.124     3.283 r  calldecoder/hexnum_OBUF[3]_inst_i_1/O
-                         net (fo=1, routed)           3.823     7.106    hexnum_OBUF[3]
-    P1                   OBUF (Prop_obuf_I_O)         3.515    10.621 r  hexnum_OBUF[3]_inst/O
-                         net (fo=0)                   0.000    10.621    hexnum[3]
-    P1                                                                r  hexnum[3] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[13].debounce_keys/result_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            hexnum[2]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.555ns  (logic 4.565ns (43.251%)  route 5.990ns (56.749%))
-  Logic Levels:           5  (FDCE=1 LUT4=1 LUT6=2 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X5Y90          FDCE                         0.000     0.000 r  row_debounce[13].debounce_keys/result_reg/C
-    SLICE_X5Y90          FDCE (Prop_fdce_C_Q)         0.456     0.456 r  row_debounce[13].debounce_keys/result_reg/Q
-                         net (fo=8, routed)           1.226     1.682    calldecoder/sel0[13]
-    SLICE_X8Y88          LUT4 (Prop_lut4_I0_O)        0.150     1.832 r  calldecoder/hexnum_OBUF[2]_inst_i_5/O
-                         net (fo=1, routed)           0.452     2.284    calldecoder/hexnum_OBUF[2]_inst_i_5_n_0
-    SLICE_X8Y88          LUT6 (Prop_lut6_I1_O)        0.328     2.612 r  calldecoder/hexnum_OBUF[2]_inst_i_3/O
-                         net (fo=1, routed)           0.969     3.581    calldecoder/hexnum_OBUF[2]_inst_i_3_n_0
-    SLICE_X10Y88         LUT6 (Prop_lut6_I5_O)        0.124     3.705 r  calldecoder/hexnum_OBUF[2]_inst_i_1/O
-                         net (fo=1, routed)           3.344     7.048    hexnum_OBUF[2]
-    N3                   OBUF (Prop_obuf_I_O)         3.507    10.555 r  hexnum_OBUF[2]_inst/O
-                         net (fo=0)                   0.000    10.555    hexnum[2]
-    N3                                                                r  hexnum[2] (OUT)
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          1.070     9.590    keys_stored[0]_i_1_n_0
+    SLICE_X6Y34          FDRE                                         r  keys_stored_reg[11]/R
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
   Source:                 reset_n
                             (input port)
-  Destination:            FSM_onehot_columns_reg[1]/CLR
+  Destination:            keys_stored_reg[14]/R
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.540ns  (logic 1.580ns (14.993%)  route 8.959ns (85.007%))
+  Data Path Delay:        9.590ns  (logic 1.704ns (17.771%)  route 7.885ns (82.229%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          1.070     9.590    keys_stored[0]_i_1_n_0
+    SLICE_X7Y34          FDRE                                         r  keys_stored_reg[14]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[15]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.590ns  (logic 1.704ns (17.771%)  route 7.885ns (82.229%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          1.070     9.590    keys_stored[0]_i_1_n_0
+    SLICE_X7Y34          FDRE                                         r  keys_stored_reg[15]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_double_reg[0]/CLR
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.505ns  (logic 1.580ns (16.625%)  route 7.925ns (83.375%))
   Logic Levels:           2  (IBUF=1 LUT1=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -308,120 +296,10 @@ Slack:                    inf
     R2                                                0.000     0.000 r  reset_n (IN)
                          net (fo=0)                   0.000     0.000    reset_n
     R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
-                         net (fo=39, routed)          5.398     6.854    row_debounce[0].debounce_keys/reset_n_IBUF
-    SLICE_X5Y92          LUT1 (Prop_lut1_I0_O)        0.124     6.978 f  row_debounce[0].debounce_keys/FSM_onehot_columns[10]_i_2/O
-                         net (fo=91, routed)          3.562    10.540    row_debounce[0].debounce_keys_n_1
-    SLICE_X2Y98          FDCE                                         f  FSM_onehot_columns_reg[1]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 reset_n
-                            (input port)
-  Destination:            FSM_onehot_columns_reg[2]/CLR
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.540ns  (logic 1.580ns (14.993%)  route 8.959ns (85.007%))
-  Logic Levels:           2  (IBUF=1 LUT1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    R2                                                0.000     0.000 r  reset_n (IN)
-                         net (fo=0)                   0.000     0.000    reset_n
-    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
-                         net (fo=39, routed)          5.398     6.854    row_debounce[0].debounce_keys/reset_n_IBUF
-    SLICE_X5Y92          LUT1 (Prop_lut1_I0_O)        0.124     6.978 f  row_debounce[0].debounce_keys/FSM_onehot_columns[10]_i_2/O
-                         net (fo=91, routed)          3.562    10.540    row_debounce[0].debounce_keys_n_1
-    SLICE_X2Y98          FDCE                                         f  FSM_onehot_columns_reg[2]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 reset_n
-                            (input port)
-  Destination:            FSM_onehot_columns_reg[8]/CLR
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.540ns  (logic 1.580ns (14.993%)  route 8.959ns (85.007%))
-  Logic Levels:           2  (IBUF=1 LUT1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    R2                                                0.000     0.000 r  reset_n (IN)
-                         net (fo=0)                   0.000     0.000    reset_n
-    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
-                         net (fo=39, routed)          5.398     6.854    row_debounce[0].debounce_keys/reset_n_IBUF
-    SLICE_X5Y92          LUT1 (Prop_lut1_I0_O)        0.124     6.978 f  row_debounce[0].debounce_keys/FSM_onehot_columns[10]_i_2/O
-                         net (fo=91, routed)          3.562    10.540    row_debounce[0].debounce_keys_n_1
-    SLICE_X2Y98          FDCE                                         f  FSM_onehot_columns_reg[8]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 reset_n
-                            (input port)
-  Destination:            FSM_onehot_columns_reg[9]/CLR
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.540ns  (logic 1.580ns (14.993%)  route 8.959ns (85.007%))
-  Logic Levels:           2  (IBUF=1 LUT1=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    R2                                                0.000     0.000 r  reset_n (IN)
-                         net (fo=0)                   0.000     0.000    reset_n
-    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
-                         net (fo=39, routed)          5.398     6.854    row_debounce[0].debounce_keys/reset_n_IBUF
-    SLICE_X5Y92          LUT1 (Prop_lut1_I0_O)        0.124     6.978 f  row_debounce[0].debounce_keys/FSM_onehot_columns[10]_i_2/O
-                         net (fo=91, routed)          3.562    10.540    row_debounce[0].debounce_keys_n_1
-    SLICE_X2Y98          FDCE                                         f  FSM_onehot_columns_reg[9]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 FSM_onehot_columns_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            columns[4]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.455ns  (logic 4.494ns (42.988%)  route 5.961ns (57.012%))
-  Logic Levels:           4  (FDCE=1 LUT2=1 LUT6=1 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X2Y98          FDCE                         0.000     0.000 r  FSM_onehot_columns_reg[1]/C
-    SLICE_X2Y98          FDCE (Prop_fdce_C_Q)         0.518     0.518 r  FSM_onehot_columns_reg[1]/Q
-                         net (fo=14, routed)          0.780     1.298    FSM_onehot_columns_reg_n_0_[1]
-    SLICE_X1Y95          LUT2 (Prop_lut2_I0_O)        0.150     1.448 f  columns_OBUF[2]_inst_i_2/O
-                         net (fo=3, routed)           0.664     2.112    columns_OBUF[2]_inst_i_2_n_0
-    SLICE_X1Y94          LUT6 (Prop_lut6_I5_O)        0.326     2.438 r  columns_OBUF[4]_inst_i_1/O
-                         net (fo=1, routed)           4.517     6.955    columns_OBUF[4]
-    R18                  OBUF (Prop_obuf_I_O)         3.500    10.455 r  columns_OBUF[4]_inst/O
-                         net (fo=0)                   0.000    10.455    columns[4]
-    R18                                                               r  columns[4] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[13].debounce_keys/result_reg/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            hexnum[1]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.249ns  (logic 4.572ns (44.609%)  route 5.677ns (55.391%))
-  Logic Levels:           5  (FDCE=1 LUT4=1 LUT6=2 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X5Y90          FDCE                         0.000     0.000 r  row_debounce[13].debounce_keys/result_reg/C
-    SLICE_X5Y90          FDCE (Prop_fdce_C_Q)         0.456     0.456 f  row_debounce[13].debounce_keys/result_reg/Q
-                         net (fo=8, routed)           1.409     1.865    calldecoder/sel0[13]
-    SLICE_X10Y89         LUT4 (Prop_lut4_I1_O)        0.146     2.011 r  calldecoder/hexnum_OBUF[0]_inst_i_6/O
-                         net (fo=2, routed)           0.484     2.495    calldecoder/hexnum_OBUF[0]_inst_i_6_n_0
-    SLICE_X10Y89         LUT6 (Prop_lut6_I1_O)        0.328     2.823 r  calldecoder/hexnum_OBUF[1]_inst_i_4/O
-                         net (fo=1, routed)           0.282     3.105    calldecoder/hexnum_OBUF[1]_inst_i_4_n_0
-    SLICE_X10Y89         LUT6 (Prop_lut6_I5_O)        0.124     3.229 r  calldecoder/hexnum_OBUF[1]_inst_i_1/O
-                         net (fo=1, routed)           3.502     6.731    hexnum_OBUF[1]
-    P3                   OBUF (Prop_obuf_I_O)         3.518    10.249 r  hexnum_OBUF[1]_inst/O
-                         net (fo=0)                   0.000    10.249    hexnum[1]
-    P3                                                                r  hexnum[1] (OUT)
+                         net (fo=41, routed)          4.948     6.405    debounce_clear/reset_n_IBUF
+    SLICE_X7Y22          LUT1 (Prop_lut1_I0_O)        0.124     6.529 f  debounce_clear/FSM_onehot_columns[10]_i_2/O
+                         net (fo=94, routed)          2.976     9.505    debounce_clear_n_1
+    SLICE_X6Y35          FDCE                                         f  keys_double_reg[0]/CLR
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -430,7 +308,7 @@ Slack:                    inf
   Destination:            keys_double_reg[14]/CLR
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.249ns  (logic 1.580ns (15.418%)  route 8.669ns (84.582%))
+  Data Path Delay:        9.505ns  (logic 1.580ns (16.625%)  route 7.925ns (83.375%))
   Logic Levels:           2  (IBUF=1 LUT1=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -438,10 +316,120 @@ Slack:                    inf
     R2                                                0.000     0.000 r  reset_n (IN)
                          net (fo=0)                   0.000     0.000    reset_n
     R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
-                         net (fo=39, routed)          5.398     6.854    row_debounce[0].debounce_keys/reset_n_IBUF
-    SLICE_X5Y92          LUT1 (Prop_lut1_I0_O)        0.124     6.978 f  row_debounce[0].debounce_keys/FSM_onehot_columns[10]_i_2/O
-                         net (fo=91, routed)          3.271    10.249    row_debounce[0].debounce_keys_n_1
-    SLICE_X3Y97          FDCE                                         f  keys_double_reg[14]/CLR
+                         net (fo=41, routed)          4.948     6.405    debounce_clear/reset_n_IBUF
+    SLICE_X7Y22          LUT1 (Prop_lut1_I0_O)        0.124     6.529 f  debounce_clear/FSM_onehot_columns[10]_i_2/O
+                         net (fo=94, routed)          2.976     9.505    debounce_clear_n_1
+    SLICE_X6Y35          FDCE                                         f  keys_double_reg[14]/CLR
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[12]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.444ns  (logic 1.704ns (18.046%)  route 7.740ns (81.954%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          0.924     9.444    keys_stored[0]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[12]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[13]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.444ns  (logic 1.704ns (18.046%)  route 7.740ns (81.954%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          0.924     9.444    keys_stored[0]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[13]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[4]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.444ns  (logic 1.704ns (18.046%)  route 7.740ns (81.954%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          0.924     9.444    keys_stored[0]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[5]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.444ns  (logic 1.704ns (18.046%)  route 7.740ns (81.954%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          0.924     9.444    keys_stored[0]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[5]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 reset_n
+                            (input port)
+  Destination:            keys_stored_reg[6]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.444ns  (logic 1.704ns (18.046%)  route 7.740ns (81.954%))
+  Logic Levels:           3  (IBUF=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    R2                                                0.000     0.000 r  reset_n (IN)
+                         net (fo=0)                   0.000     0.000    reset_n
+    R2                   IBUF (Prop_ibuf_I_O)         1.456     1.456 r  reset_n_IBUF_inst/O
+                         net (fo=41, routed)          5.522     6.978    reset_n_IBUF
+    SLICE_X2Y35          LUT6 (Prop_lut6_I0_O)        0.124     7.102 r  keys_stored[0]_i_2/O
+                         net (fo=17, routed)          1.293     8.395    keys_stored[0]_i_2_n_0
+    SLICE_X6Y32          LUT6 (Prop_lut6_I5_O)        0.124     8.519 r  keys_stored[0]_i_1/O
+                         net (fo=16, routed)          0.924     9.444    keys_stored[0]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[6]/R
   -------------------------------------------------------------------    -------------------
 
 
@@ -451,9 +439,9 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 keys_stored_reg[2]/C
+  Source:                 keys_stored_reg[0]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            row_debounce[2].debounce_keys/flipflops_reg[0]/D
+  Destination:            row_debounce[0].debounce_keys/flipflops_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
   Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
@@ -461,44 +449,118 @@ Slack:                    inf
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y93          FDRE                         0.000     0.000 r  keys_stored_reg[2]/C
-    SLICE_X5Y93          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  keys_stored_reg[2]/Q
-                         net (fo=1, routed)           0.110     0.251    row_debounce[2].debounce_keys/D[0]
-    SLICE_X5Y92          FDCE                                         r  row_debounce[2].debounce_keys/flipflops_reg[0]/D
+    SLICE_X7Y31          FDRE                         0.000     0.000 r  keys_stored_reg[0]/C
+    SLICE_X7Y31          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  keys_stored_reg[0]/Q
+                         net (fo=1, routed)           0.110     0.251    row_debounce[0].debounce_keys/D[0]
+    SLICE_X7Y30          FDCE                                         r  row_debounce[0].debounce_keys/flipflops_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 keys_stored_reg[9]/C
+  Source:                 keys_stored_reg[3]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            row_debounce[9].debounce_keys/flipflops_reg[0]/D
+  Destination:            row_debounce[3].debounce_keys/flipflops_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.259ns  (logic 0.141ns (54.421%)  route 0.118ns (45.579%))
+  Data Path Delay:        0.251ns  (logic 0.141ns (56.174%)  route 0.110ns (43.826%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y94          FDRE                         0.000     0.000 r  keys_stored_reg[9]/C
-    SLICE_X4Y94          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  keys_stored_reg[9]/Q
-                         net (fo=1, routed)           0.118     0.259    row_debounce[9].debounce_keys/D[0]
-    SLICE_X4Y92          FDCE                                         r  row_debounce[9].debounce_keys/flipflops_reg[0]/D
+    SLICE_X3Y31          FDRE                         0.000     0.000 r  keys_stored_reg[3]/C
+    SLICE_X3Y31          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  keys_stored_reg[3]/Q
+                         net (fo=1, routed)           0.110     0.251    row_debounce[3].debounce_keys/D[0]
+    SLICE_X3Y30          FDCE                                         r  row_debounce[3].debounce_keys/flipflops_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 row_debounce[9].debounce_keys/flipflops_reg[0]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[9].debounce_keys/flipflops_reg[1]/D
+  Source:                 keys_stored_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            row_debounce[1].debounce_keys/flipflops_reg[0]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.262ns  (logic 0.128ns (48.861%)  route 0.134ns (51.139%))
+  Data Path Delay:        0.257ns  (logic 0.141ns (54.812%)  route 0.116ns (45.188%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y32          FDRE                         0.000     0.000 r  keys_stored_reg[1]/C
+    SLICE_X3Y32          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  keys_stored_reg[1]/Q
+                         net (fo=1, routed)           0.116     0.257    row_debounce[1].debounce_keys/D[0]
+    SLICE_X3Y30          FDCE                                         r  row_debounce[1].debounce_keys/flipflops_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 row_debounce[12].debounce_keys/flipflops_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            row_debounce[12].debounce_keys/flipflops_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.295ns  (logic 0.164ns (55.560%)  route 0.131ns (44.440%))
   Logic Levels:           1  (FDCE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X4Y92          FDCE                         0.000     0.000 r  row_debounce[9].debounce_keys/flipflops_reg[0]/C
-    SLICE_X4Y92          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[9].debounce_keys/flipflops_reg[0]/Q
-                         net (fo=3, routed)           0.134     0.262    row_debounce[9].debounce_keys/flipflops_reg_n_0_[0]
-    SLICE_X2Y92          FDCE                                         r  row_debounce[9].debounce_keys/flipflops_reg[1]/D
+    SLICE_X8Y32          FDCE                         0.000     0.000 r  row_debounce[12].debounce_keys/flipflops_reg[0]/C
+    SLICE_X8Y32          FDCE (Prop_fdce_C_Q)         0.164     0.164 r  row_debounce[12].debounce_keys/flipflops_reg[0]/Q
+                         net (fo=3, routed)           0.131     0.295    row_debounce[12].debounce_keys/flipflops_reg_n_0_[0]
+    SLICE_X8Y31          FDCE                                         r  row_debounce[12].debounce_keys/flipflops_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 row_debounce[0].debounce_keys/flipflops_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            row_debounce[0].debounce_keys/result_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.296ns  (logic 0.227ns (76.736%)  route 0.069ns (23.264%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y28          FDCE                         0.000     0.000 r  row_debounce[0].debounce_keys/flipflops_reg[1]/C
+    SLICE_X7Y28          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[0].debounce_keys/flipflops_reg[1]/Q
+                         net (fo=2, routed)           0.069     0.197    row_debounce[0].debounce_keys/p_0_in
+    SLICE_X7Y28          LUT4 (Prop_lut4_I1_O)        0.099     0.296 r  row_debounce[0].debounce_keys/result_i_1__14/O
+                         net (fo=1, routed)           0.000     0.296    row_debounce[0].debounce_keys/result_i_1__14_n_0
+    SLICE_X7Y28          FDCE                                         r  row_debounce[0].debounce_keys/result_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 row_debounce[14].debounce_keys/flipflops_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            row_debounce[14].debounce_keys/result_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.302ns  (logic 0.209ns (69.158%)  route 0.093ns (30.842%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y26          FDCE                         0.000     0.000 r  row_debounce[14].debounce_keys/flipflops_reg[1]/C
+    SLICE_X6Y26          FDCE (Prop_fdce_C_Q)         0.164     0.164 r  row_debounce[14].debounce_keys/flipflops_reg[1]/Q
+                         net (fo=2, routed)           0.093     0.257    row_debounce[14].debounce_keys/p_0_in
+    SLICE_X7Y26          LUT4 (Prop_lut4_I1_O)        0.045     0.302 r  row_debounce[14].debounce_keys/result_i_1__0/O
+                         net (fo=1, routed)           0.000     0.302    row_debounce[14].debounce_keys/result_i_1__0_n_0
+    SLICE_X7Y26          FDCE                                         r  row_debounce[14].debounce_keys/result_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 row_debounce[1].debounce_keys/flipflops_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            row_debounce[1].debounce_keys/result_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.303ns  (logic 0.227ns (74.868%)  route 0.076ns (25.132%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y26          FDCE                         0.000     0.000 r  row_debounce[1].debounce_keys/flipflops_reg[1]/C
+    SLICE_X4Y26          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[1].debounce_keys/flipflops_reg[1]/Q
+                         net (fo=2, routed)           0.076     0.204    row_debounce[1].debounce_keys/p_0_in
+    SLICE_X4Y26          LUT4 (Prop_lut4_I1_O)        0.099     0.303 r  row_debounce[1].debounce_keys/result_i_1__13/O
+                         net (fo=1, routed)           0.000     0.303    row_debounce[1].debounce_keys/result_i_1__13_n_0
+    SLICE_X4Y26          FDCE                                         r  row_debounce[1].debounce_keys/result_reg/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -507,125 +569,53 @@ Slack:                    inf
   Destination:            row_debounce[10].debounce_keys/flipflops_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.269ns  (logic 0.141ns (52.401%)  route 0.128ns (47.599%))
+  Data Path Delay:        0.310ns  (logic 0.141ns (45.456%)  route 0.169ns (54.544%))
   Logic Levels:           1  (FDCE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y91          FDCE                         0.000     0.000 r  row_debounce[10].debounce_keys/flipflops_reg[0]/C
-    SLICE_X7Y91          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  row_debounce[10].debounce_keys/flipflops_reg[0]/Q
-                         net (fo=3, routed)           0.128     0.269    row_debounce[10].debounce_keys/flipflops_reg_n_0_[0]
-    SLICE_X6Y90          FDCE                                         r  row_debounce[10].debounce_keys/flipflops_reg[1]/D
+    SLICE_X5Y30          FDCE                         0.000     0.000 r  row_debounce[10].debounce_keys/flipflops_reg[0]/C
+    SLICE_X5Y30          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  row_debounce[10].debounce_keys/flipflops_reg[0]/Q
+                         net (fo=3, routed)           0.169     0.310    row_debounce[10].debounce_keys/flipflops_reg_n_0_[0]
+    SLICE_X7Y30          FDCE                                         r  row_debounce[10].debounce_keys/flipflops_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 row_debounce[8].debounce_keys/flipflops_reg[0]/C
+  Source:                 debounce_clear/flipflops_reg[0]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[8].debounce_keys/flipflops_reg[1]/D
+  Destination:            debounce_clear/result_reg/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.276ns  (logic 0.128ns (46.338%)  route 0.148ns (53.662%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X11Y88         FDCE                         0.000     0.000 r  row_debounce[8].debounce_keys/flipflops_reg[0]/C
-    SLICE_X11Y88         FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[8].debounce_keys/flipflops_reg[0]/Q
-                         net (fo=3, routed)           0.148     0.276    row_debounce[8].debounce_keys/flipflops_reg_n_0_[0]
-    SLICE_X11Y88         FDCE                                         r  row_debounce[8].debounce_keys/flipflops_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 FSM_onehot_columns_reg[6]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            FSM_onehot_columns_reg[7]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.278ns  (logic 0.141ns (50.651%)  route 0.137ns (49.349%))
-  Logic Levels:           1  (FDCE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X1Y94          FDCE                         0.000     0.000 r  FSM_onehot_columns_reg[6]/C
-    SLICE_X1Y94          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  FSM_onehot_columns_reg[6]/Q
-                         net (fo=14, routed)          0.137     0.278    FSM_onehot_columns_reg_n_0_[6]
-    SLICE_X3Y94          FDCE                                         r  FSM_onehot_columns_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[11].debounce_keys/flipflops_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[11].debounce_keys/result_reg/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.296ns  (logic 0.227ns (76.736%)  route 0.069ns (23.264%))
+  Data Path Delay:        0.312ns  (logic 0.227ns (72.839%)  route 0.085ns (27.161%))
   Logic Levels:           2  (FDCE=1 LUT4=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y87          FDCE                         0.000     0.000 r  row_debounce[11].debounce_keys/flipflops_reg[1]/C
-    SLICE_X7Y87          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[11].debounce_keys/flipflops_reg[1]/Q
-                         net (fo=2, routed)           0.069     0.197    row_debounce[11].debounce_keys/p_0_in
-    SLICE_X7Y87          LUT4 (Prop_lut4_I1_O)        0.099     0.296 r  row_debounce[11].debounce_keys/result_i_1__3/O
-                         net (fo=1, routed)           0.000     0.296    row_debounce[11].debounce_keys/result_i_1__3_n_0
-    SLICE_X7Y87          FDCE                                         r  row_debounce[11].debounce_keys/result_reg/D
+    SLICE_X3Y21          FDCE                         0.000     0.000 r  debounce_clear/flipflops_reg[0]/C
+    SLICE_X3Y21          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  debounce_clear/flipflops_reg[0]/Q
+                         net (fo=3, routed)           0.085     0.213    debounce_clear/flipflops_reg_n_0_[0]
+    SLICE_X3Y21          LUT4 (Prop_lut4_I2_O)        0.099     0.312 r  debounce_clear/result_i_1__15/O
+                         net (fo=1, routed)           0.000     0.312    debounce_clear/result_i_1__15_n_0
+    SLICE_X3Y21          FDCE                                         r  debounce_clear/result_reg/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 row_debounce[13].debounce_keys/flipflops_reg[1]/C
+  Source:                 keys_double_reg[12]/C
                             (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[13].debounce_keys/result_reg/D
+  Destination:            keys_stored_reg[12]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.296ns  (logic 0.227ns (76.736%)  route 0.069ns (23.264%))
-  Logic Levels:           2  (FDCE=1 LUT4=1)
+  Data Path Delay:        0.314ns  (logic 0.209ns (66.475%)  route 0.105ns (33.525%))
+  Logic Levels:           2  (FDCE=1 LUT2=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y90          FDCE                         0.000     0.000 r  row_debounce[13].debounce_keys/flipflops_reg[1]/C
-    SLICE_X5Y90          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[13].debounce_keys/flipflops_reg[1]/Q
-                         net (fo=2, routed)           0.069     0.197    row_debounce[13].debounce_keys/p_0_in
-    SLICE_X5Y90          LUT4 (Prop_lut4_I1_O)        0.099     0.296 r  row_debounce[13].debounce_keys/result_i_1__1/O
-                         net (fo=1, routed)           0.000     0.296    row_debounce[13].debounce_keys/result_i_1__1_n_0
-    SLICE_X5Y90          FDCE                                         r  row_debounce[13].debounce_keys/result_reg/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[15].debounce_keys/flipflops_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[15].debounce_keys/result_reg/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.296ns  (logic 0.227ns (76.736%)  route 0.069ns (23.264%))
-  Logic Levels:           2  (FDCE=1 LUT4=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X3Y88          FDCE                         0.000     0.000 r  row_debounce[15].debounce_keys/flipflops_reg[1]/C
-    SLICE_X3Y88          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[15].debounce_keys/flipflops_reg[1]/Q
-                         net (fo=2, routed)           0.069     0.197    row_debounce[15].debounce_keys/p_0_in
-    SLICE_X3Y88          LUT4 (Prop_lut4_I1_O)        0.099     0.296 r  row_debounce[15].debounce_keys/result_i_1/O
-                         net (fo=1, routed)           0.000     0.296    row_debounce[15].debounce_keys/result_i_1_n_0
-    SLICE_X3Y88          FDCE                                         r  row_debounce[15].debounce_keys/result_reg/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 row_debounce[2].debounce_keys/flipflops_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            row_debounce[2].debounce_keys/result_reg/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.296ns  (logic 0.227ns (76.736%)  route 0.069ns (23.264%))
-  Logic Levels:           2  (FDCE=1 LUT4=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y92          FDCE                         0.000     0.000 r  row_debounce[2].debounce_keys/flipflops_reg[1]/C
-    SLICE_X9Y92          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  row_debounce[2].debounce_keys/flipflops_reg[1]/Q
-                         net (fo=2, routed)           0.069     0.197    row_debounce[2].debounce_keys/p_0_in
-    SLICE_X9Y92          LUT4 (Prop_lut4_I1_O)        0.099     0.296 r  row_debounce[2].debounce_keys/result_i_1__12/O
-                         net (fo=1, routed)           0.000     0.296    row_debounce[2].debounce_keys/result_i_1__12_n_0
-    SLICE_X9Y92          FDCE                                         r  row_debounce[2].debounce_keys/result_reg/D
+    SLICE_X6Y33          FDCE                         0.000     0.000 r  keys_double_reg[12]/C
+    SLICE_X6Y33          FDCE (Prop_fdce_C_Q)         0.164     0.164 r  keys_double_reg[12]/Q
+                         net (fo=4, routed)           0.105     0.269    p_0_in33_in
+    SLICE_X7Y33          LUT2 (Prop_lut2_I0_O)        0.045     0.314 r  keys_stored[12]_i_1/O
+                         net (fo=1, routed)           0.000     0.314    keys_stored[12]_i_1_n_0
+    SLICE_X7Y33          FDRE                                         r  keys_stored_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
 

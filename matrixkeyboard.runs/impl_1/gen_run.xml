@@ -1,87 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686592196">
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="pmod_keypad_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS" Name="pmod_keypad_routed.rqs"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="pmod_keypad.drc"/>
-  <File Type="BG-BGN" Name="pmod_keypad.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="pmod_keypad.sysdef"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686651458">
+  <File Type="ROUTE-PWR" Name="pmod_keypad_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="pmod_keypad.tcl"/>
+  <File Type="BITSTR-MMI" Name="pmod_keypad.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="pmod_keypad_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="pmod_keypad_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="pmod_keypad_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="pmod_keypad_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="pmod_keypad_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="pmod_keypad_opt.dcp"/>
+  <File Type="OPT-DRC" Name="pmod_keypad_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="pmod_keypad.hwdef"/>
+  <File Type="PWROPT-DCP" Name="pmod_keypad_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="pmod_keypad_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="pmod_keypad_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="pmod_keypad_placed.dcp"/>
+  <File Type="PLACE-IO" Name="pmod_keypad_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="pmod_keypad_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="pmod_keypad_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="pmod_keypad_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="pmod_keypad_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="pmod_keypad_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="pmod_keypad_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="pmod_keypad.bin"/>
+  <File Type="PLACE-TIMING" Name="pmod_keypad_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="pmod_keypad_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="pmod_keypad.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="pmod_keypad_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="pmod_keypad_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="pmod_keypad_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="pmod_keypad.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="pmod_keypad_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="pmod_keypad_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="pmod_keypad_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="pmod_keypad_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="pmod_keypad_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="pmod_keypad_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="pmod_keypad_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="pmod_keypad_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="pmod_keypad_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="pmod_keypad_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="pmod_keypad_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="pmod_keypad_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="pmod_keypad_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="pmod_keypad_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="pmod_keypad_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="pmod_keypad_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="pmod_keypad_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="pmod_keypad_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="pmod_keypad_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="pmod_keypad_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="pmod_keypad_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="pmod_keypad_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="pmod_keypad_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="pmod_keypad_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="pmod_keypad_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="pmod_keypad_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="pmod_keypad_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="pmod_keypad.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="pmod_keypad_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="pmod_keypad_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="pmod_keypad.nky"/>
+  <File Type="BITSTR-BMM" Name="pmod_keypad_bd.bmm"/>
+  <File Type="PDI-FILE" Name="pmod_keypad.pdi"/>
+  <File Type="RCFI_FILE" Name="pmod_keypad.rcfi"/>
+  <File Type="CFI_FILE" Name="pmod_keypad.cfi"/>
+  <File Type="RNPI_FILE" Name="pmod_keypad.rnpi"/>
+  <File Type="NPI_FILE" Name="pmod_keypad.npi"/>
+  <File Type="RBD_FILE" Name="pmod_keypad.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="pmod_keypad.ltx"/>
-  <File Type="RBD_FILE" Name="pmod_keypad.rbd"/>
-  <File Type="NPI_FILE" Name="pmod_keypad.npi"/>
-  <File Type="RNPI_FILE" Name="pmod_keypad.rnpi"/>
-  <File Type="CFI_FILE" Name="pmod_keypad.cfi"/>
-  <File Type="RCFI_FILE" Name="pmod_keypad.rcfi"/>
+  <File Type="BITSTR-SYSDEF" Name="pmod_keypad.sysdef"/>
+  <File Type="BG-BGN" Name="pmod_keypad.bgn"/>
+  <File Type="BG-DRC" Name="pmod_keypad.drc"/>
   <File Type="RDI-RDI" Name="pmod_keypad.vdi"/>
-  <File Type="PDI-FILE" Name="pmod_keypad.pdi"/>
-  <File Type="BITSTR-MMI" Name="pmod_keypad.mmi"/>
-  <File Type="BITSTR-BMM" Name="pmod_keypad_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="pmod_keypad.nky"/>
-  <File Type="BITSTR-RBT" Name="pmod_keypad.rbt"/>
-  <File Type="BITSTR-MSK" Name="pmod_keypad.msk"/>
-  <File Type="BG-BIN" Name="pmod_keypad.bin"/>
-  <File Type="BG-BIT" Name="pmod_keypad.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="pmod_keypad_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="pmod_keypad_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="pmod_keypad_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="pmod_keypad_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="pmod_keypad_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="pmod_keypad_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="pmod_keypad_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="pmod_keypad_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="pmod_keypad_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="pmod_keypad_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="pmod_keypad_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="pmod_keypad_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="pmod_keypad_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="pmod_keypad_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="pmod_keypad_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="pmod_keypad_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="pmod_keypad_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="pmod_keypad_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="pmod_keypad_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="pmod_keypad_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="pmod_keypad_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="pmod_keypad_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="pmod_keypad_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="pmod_keypad_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="pmod_keypad_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="pmod_keypad_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="pmod_keypad_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="pmod_keypad_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="pmod_keypad_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="pmod_keypad_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="pmod_keypad_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="pmod_keypad_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="pmod_keypad_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="pmod_keypad_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="pmod_keypad_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="pmod_keypad_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="pmod_keypad_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="pmod_keypad_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="pmod_keypad_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="pmod_keypad_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="pmod_keypad_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="pmod_keypad_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="pmod_keypad_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="pmod_keypad_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="pmod_keypad_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="pmod_keypad_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="pmod_keypad_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="pmod_keypad.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="pmod_keypad_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="pmod_keypad_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="pmod_keypad_opt.dcp"/>
-  <File Type="OPT-TIMING" Name="pmod_keypad_timing_summary_opted.rpt"/>
-  <File Type="REPORTS-TCL" Name="pmod_keypad_reports.tcl"/>
-  <File Type="INIT-TIMING" Name="pmod_keypad_timing_summary_init.rpt"/>
-  <File Type="PA-TCL" Name="pmod_keypad.tcl"/>
-  <File Type="PA-DCP" Name="pmod_keypad.dcp"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="pmod_keypad_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="pmod_keypad_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/components/BinaryTo7Segments.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_1/project_1.srcs/sources_1/imports/components/BinaryTo7Segments.vhd"/>
+        <Attr Name="ImportTime" Val="1682661400"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/debounce.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -94,8 +101,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/hextodisp.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/pmod_keypad.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/stack.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -134,9 +154,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

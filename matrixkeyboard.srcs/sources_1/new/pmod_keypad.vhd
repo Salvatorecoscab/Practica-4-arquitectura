@@ -11,8 +11,10 @@ ENTITY pmod_keypad IS
     reset_n :  IN     STD_LOGIC;                           --asynchornous active-low reset
     rows    :  IN     STD_LOGIC_VECTOR(1 TO 4);            --row connections to keypad
     columns :  BUFFER STD_LOGIC_VECTOR(1 TO 4) := "1111";  --column connections to keypad
-    hexnum    :  OUT    STD_LOGIC_VECTOR(0 TO 4);          --resultant hex num
-    clear : in std_logic);
+    hexnum    :  OUT    STD_LOGIC_VECTOR(4 DOWNTO 0);          --resultant hex num
+    clear : in std_logic;
+    segment : out  STD_LOGIC_VECTOR (6 downto 0);
+    display : out  STD_LOGIC_VECTOR (3 downto 0));
 END pmod_keypad;
 
 ARCHITECTURE logic OF pmod_keypad IS
@@ -22,11 +24,14 @@ ARCHITECTURE logic OF pmod_keypad IS
   SIGNAL keys_stored : STD_LOGIC_VECTOR(0 TO 15) := (OTHERS => '0');  --final key press values before debounce
   -- EDIT
   SIGNAL keyssignal        : STD_LOGIC_VECTOR(0 TO 15) := (OTHERS => '0');
-  SIGNAL hexnumsignal : std_logic_vector(0 to 4);
+  SIGNAL hexnumsignal : std_logic_vector(4 downto 0);
   SIGNAL clearsignal :std_logic;
-  
+  TYPE num is array (0 to 3) of std_logic_vector(0 to 4);
+  signal stack_num:num:=(others=>(others=>'0'));
+  signal stackunido: std_logic_vector(19 downto 0);
+  signal hexnumantes: std_logic_vector(4 downto 0):=(others=>'0');
   --declare debouncer componxent
-  COMPONENT debounce IS
+  COMPONENT debounce IS 
     GENERIC(
       clk_freq    : INTEGER;   --system clock frequency in Hz
       stable_time : INTEGER);  --time button must remain stable in ms
@@ -37,13 +42,31 @@ ARCHITECTURE logic OF pmod_keypad IS
       result  : OUT STD_LOGIC);  --debounced signal
   END COMPONENT;
   COMPONENT decoderkeys is
- 
-        port(
+   port(
     keycode: in std_logic_vector(0 to 15);
-    numEn:  out std_logic_vector(0 to 4)
+    numEn:  out std_logic_vector(4 downto 0)
  );
-    
   end component;
+  component hextodisp is
+    Port ( clk : in  STD_LOGIC;
+           rst : in  STD_LOGIC;
+           segment : out  STD_LOGIC_VECTOR (6 downto 0);
+           display : out  STD_LOGIC_VECTOR (3 downto 0);
+           buff: in  STD_LOGIC_VECTOR (19 downto 0)
+           );
+end component;
+   component stack is port(  Clk:in std_logic; --Clockforthestack.
+                    Reset:in std_logic;--activehighreset.
+                    Enable:in std_logic; --Enablethestack.Otherwiseneitherpushnorpopwillhappen. 
+                    Data_In:in std_logic_vector(15 downto 0); --Datatobepushedtostack
+                    Data_Out:out std_logic_vector(15 downto 0); --Datapoppedfromthestack. 
+                    PUSH_barPOP:in std_logic; --activelowforPOPandactivehighforPUSH. 
+                    Stack_Full:out std_logic; --Goeshighwhenthestackisfull.
+                    Stack_Empty:out std_logic --Goeshighwhenthestackisempty.
+                    );
+end component;
+
+
 BEGIN
   
   --synchronizer flip-flops
@@ -259,24 +282,37 @@ BEGIN
       PORT MAP(clk => clk, reset_n => reset_n, button => clear, result => clearsignal);
   calldecoder: decoderkeys port map(
     keycode=>keyssignal,
-    numEn=>hexnumsignal
+    numEn=>hexnumsignal --hexnumsignal has 5 bits one is for enable
  );
-  addnum2buff: process (hexnumsignal) is 
-  variable i: integer range 0 to 4;
-  begin
-  if clearsignal='1' then 
-  num(0)<=hexnumsignal;
-  num(1)<=hexnumsignal;
-  num(2)<=hexnumsignal;
-  num(3)<=hexnumsignal;  
+hexnum<=hexnumsignal;
 
-  elsif(hexnumsignal(0)='1') then
-    num(i)<=keyssignal;
-    
-  end if;
-  if i=4 then
-    if 
-  end if;
+addnum2buff: process(clk) is
+    variable i: integer range 0 to 4;
+    begin
+        if clearsignal='1'then
+        i:=0;
+        stack_num(0)<="00000";
+        stack_num(1)<="00000";
+        stack_num(2)<="00000";
+        stack_num(3)<="00000"; 
+        elsif rising_edge(clk) then
+            if hexnumsignal(4) = '1' and hexnumantes(4) = '0' and i<4 then
+                stack_num(i)<=hexnumsignal;
+            elsif hexnumsignal(4) = '0' and hexnumantes(4) = '1' and i<4 then
+                i:=i+1;
+            end if;
+            hexnumantes <= hexnumsignal;
+        end if;
+    end process;
+
+  stackunido<=stack_num(0)&stack_num(1)&stack_num(2)&stack_num(3);
   
-  end process;
+   connectiondisp: hextodisp 
+    port map ( clk =>clk,
+           rst =>'0',
+           segment =>segment,
+           display =>display,
+           buff =>stackunido
+           );
+ 
 END logic;

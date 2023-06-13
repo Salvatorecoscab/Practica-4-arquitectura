@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../matrixkeyboard.srcs/sources_1/new/debounce.vhd" \
+"../../../../matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd" \
+"../../../../matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd" \
+
+# Do not sort compile order
+nosort

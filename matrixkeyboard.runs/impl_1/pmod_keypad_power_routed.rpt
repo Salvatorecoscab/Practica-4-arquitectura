@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2022.2 (lin64) Build 3671981 Fri Oct 14 04:59:54 MDT 2022
-| Date             : Mon Jun 12 17:51:51 2023
-| Host             : 1608755d96df running 64-bit Ubuntu 22.04.2 LTS
+| Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
+| Date             : Tue Jun 13 04:18:53 2023
+| Host             : Salvatore running 64-bit major release  (build 9200)
 | Command          : report_power -file pmod_keypad_power_routed.rpt -pb pmod_keypad_power_summary_routed.pb -rpx pmod_keypad_power_routed.rpx
 | Design           : pmod_keypad
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.567        |
+| Total On-Chip Power (W)  | 1.902        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.492        |
-| Device Static (W)        | 0.075        |
+| Dynamic (W)              | 1.825        |
+| Device Static (W)        | 0.076        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 77.2         |
-| Junction Temperature (C) | 32.8         |
+| Max Ambient (C)          | 75.5         |
+| Junction Temperature (C) | 34.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,16 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.654 |      834 |       --- |             --- |
-|   LUT as Logic |     0.341 |      250 |     20800 |            1.20 |
-|   CARRY4       |     0.201 |       80 |      8150 |            0.98 |
-|   Register     |     0.106 |      436 |     41600 |            1.05 |
+| Slice Logic    |     0.769 |      979 |       --- |             --- |
+|   LUT as Logic |     0.412 |      294 |     20800 |            1.41 |
+|   CARRY4       |     0.226 |       89 |      8150 |            1.09 |
+|   Register     |     0.126 |      502 |     41600 |            1.21 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       34 |       --- |             --- |
-| Signals        |     0.806 |      713 |       --- |             --- |
-| I/O            |     0.032 |       15 |       106 |           14.15 |
-| Static Power   |     0.075 |          |           |                 |
-| Total          |     1.567 |          |           |                 |
+|   F7/F8 Muxes  |    <0.001 |       21 |     32600 |            0.06 |
+|   Others       |     0.000 |       38 |       --- |             --- |
+| Signals        |     1.021 |      803 |       --- |             --- |
+| I/O            |     0.035 |       27 |       106 |           25.47 |
+| Static Power   |     0.076 |          |           |                 |
+| Total          |     1.902 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     1.493 |       1.480 |      0.013 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     1.828 |       1.814 |      0.014 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -138,24 +139,25 @@ Table of Contents
 +----------------------------------+-----------+
 | Name                             | Power (W) |
 +----------------------------------+-----------+
-| pmod_keypad                      |     1.492 |
-|   calldecoder                    |     0.021 |
-|   row_debounce[0].debounce_keys  |     0.066 |
+| pmod_keypad                      |     1.825 |
+|   connectiondisp                 |     0.148 |
+|   debounce_clear                 |     0.107 |
+|   row_debounce[0].debounce_keys  |     0.069 |
 |   row_debounce[10].debounce_keys |     0.077 |
-|   row_debounce[11].debounce_keys |     0.064 |
-|   row_debounce[12].debounce_keys |     0.061 |
+|   row_debounce[11].debounce_keys |     0.066 |
+|   row_debounce[12].debounce_keys |     0.074 |
 |   row_debounce[13].debounce_keys |     0.072 |
-|   row_debounce[14].debounce_keys |     0.073 |
-|   row_debounce[15].debounce_keys |     0.064 |
-|   row_debounce[1].debounce_keys  |     0.070 |
-|   row_debounce[2].debounce_keys  |     0.064 |
-|   row_debounce[3].debounce_keys  |     0.064 |
-|   row_debounce[4].debounce_keys  |     0.064 |
-|   row_debounce[5].debounce_keys  |     0.064 |
-|   row_debounce[6].debounce_keys  |     0.071 |
-|   row_debounce[7].debounce_keys  |     0.072 |
-|   row_debounce[8].debounce_keys  |     0.072 |
-|   row_debounce[9].debounce_keys  |     0.079 |
+|   row_debounce[14].debounce_keys |     0.071 |
+|   row_debounce[15].debounce_keys |     0.070 |
+|   row_debounce[1].debounce_keys  |     0.086 |
+|   row_debounce[2].debounce_keys  |     0.061 |
+|   row_debounce[3].debounce_keys  |     0.068 |
+|   row_debounce[4].debounce_keys  |     0.067 |
+|   row_debounce[5].debounce_keys  |     0.075 |
+|   row_debounce[6].debounce_keys  |     0.067 |
+|   row_debounce[7].debounce_keys  |     0.068 |
+|   row_debounce[8].debounce_keys  |     0.070 |
+|   row_debounce[9].debounce_keys  |     0.066 |
 +----------------------------------+-----------+
 
 

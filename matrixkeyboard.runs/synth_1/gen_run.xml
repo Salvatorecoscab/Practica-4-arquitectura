@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686592170" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/pmod_keypad.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="pmod_keypad_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="pmod_keypad.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="pmod_keypad_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="pmod_keypad_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="pmod_keypad_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="pmod_keypad.vds"/>
-  <File Type="REPORTS-TCL" Name="pmod_keypad_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="pmod_keypad_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1686651458" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/pmod_keypad.dcp">
   <File Type="PA-TCL" Name="pmod_keypad.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="pmod_keypad_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="pmod_keypad_reports.tcl"/>
+  <File Type="RDS-RDS" Name="pmod_keypad.vds"/>
+  <File Type="RDS-UTIL" Name="pmod_keypad_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="pmod_keypad_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="pmod_keypad.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="pmod_keypad_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="pmod_keypad_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/components/BinaryTo7Segments.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../project_1/project_1.srcs/sources_1/imports/components/BinaryTo7Segments.vhd"/>
+        <Attr Name="ImportTime" Val="1682661400"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/debounce.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -23,8 +31,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/hextodisp.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/pmod_keypad.vhd">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/stack.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -63,9 +84,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

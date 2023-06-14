@@ -1,7 +1,7 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-
+use IEEE.NUMERIC_STD.ALL;
 ENTITY pmod_keypad IS
   GENERIC(
     clk_freq    : INTEGER := 100_000_000;  --system clock frequency in Hz
@@ -11,8 +11,9 @@ ENTITY pmod_keypad IS
     reset_n :  IN     STD_LOGIC;                           --asynchornous active-low reset
     rows    :  IN     STD_LOGIC_VECTOR(1 TO 4);            --row connections to keypad
     columns :  BUFFER STD_LOGIC_VECTOR(1 TO 4) := "1111";  --column connections to keypad
-    hexnum    :  OUT    STD_LOGIC_VECTOR(4 DOWNTO 0);          --resultant hex num
-    clear : in std_logic;
+    space    :  OUT    STD_LOGIC_VECTOR(7 DOWNTO 0);          --resultant hex num
+    clear,push,pop : in std_logic;
+    read: in std_logic;
     segment : out  STD_LOGIC_VECTOR (6 downto 0);
     display : out  STD_LOGIC_VECTOR (3 downto 0));
 END pmod_keypad;
@@ -23,14 +24,26 @@ ARCHITECTURE logic OF pmod_keypad IS
   SIGNAL keys_double : STD_LOGIC_VECTOR(0 TO 15) := (OTHERS => '0');  --stores multiple key presses in the same row
   SIGNAL keys_stored : STD_LOGIC_VECTOR(0 TO 15) := (OTHERS => '0');  --final key press values before debounce
   -- EDIT
+  
   SIGNAL keyssignal        : STD_LOGIC_VECTOR(0 TO 15) := (OTHERS => '0');
   SIGNAL hexnumsignal : std_logic_vector(4 downto 0);
-  SIGNAL clearsignal :std_logic;
+  SIGNAL clearsignal,popsignal,pushsignal,popsignalprev,pushsignalprev,reset :std_logic:='0';
   TYPE num is array (0 to 3) of std_logic_vector(0 to 4);
   signal stack_num:num:=(others=>(others=>'0'));
   signal stackunido: std_logic_vector(19 downto 0);
   signal hexnumantes: std_logic_vector(4 downto 0):=(others=>'0');
+  signal buffready: std_logic:='0';
+  signal datamem: std_logic_vector(15 downto 0);
+  signal PUSH_barPOP,enablestack: std_logic;
+  signal stack_ptr: integer:=0;
+ signal buff_ptr: integer:=0;
+signal full,empty:std_logic:='0';
+signal prev_PP: std_logic:='0';
+
+  
   --declare debouncer componxent
+  type mem_type is array(0 to 255) of std_logic_vector(15 downto 0);
+  signal stack_mem:mem_type:=(others=>(others=>'0'));
   COMPONENT debounce IS 
     GENERIC(
       clk_freq    : INTEGER;   --system clock frequency in Hz
@@ -55,16 +68,7 @@ ARCHITECTURE logic OF pmod_keypad IS
            buff: in  STD_LOGIC_VECTOR (19 downto 0)
            );
 end component;
-   component stack is port(  Clk:in std_logic; --Clockforthestack.
-                    Reset:in std_logic;--activehighreset.
-                    Enable:in std_logic; --Enablethestack.Otherwiseneitherpushnorpopwillhappen. 
-                    Data_In:in std_logic_vector(15 downto 0); --Datatobepushedtostack
-                    Data_Out:out std_logic_vector(15 downto 0); --Datapoppedfromthestack. 
-                    PUSH_barPOP:in std_logic; --activelowforPOPandactivehighforPUSH. 
-                    Stack_Full:out std_logic; --Goeshighwhenthestackisfull.
-                    Stack_Empty:out std_logic --Goeshighwhenthestackisempty.
-                    );
-end component;
+
 
 
 BEGIN
@@ -271,7 +275,7 @@ BEGIN
       END IF;  
     END IF;
   END PROCESS;
-
+   reset<= not reset_n;
   --debounce key press results
   row_debounce: FOR i IN 0 TO 15 GENERATE
     debounce_keys: debounce
@@ -280,39 +284,116 @@ BEGIN
   END GENERATE;
   debounce_clear: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
       PORT MAP(clk => clk, reset_n => reset_n, button => clear, result => clearsignal);
+  debounce_push: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
+      PORT MAP(clk => clk, reset_n => reset_n, button => push, result => pushsignal);
+  debounce_pop: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
+      PORT MAP(clk => clk, reset_n => reset_n, button => pop, result => popsignal);
+
   calldecoder: decoderkeys port map(
     keycode=>keyssignal,
     numEn=>hexnumsignal --hexnumsignal has 5 bits one is for enable
  );
-hexnum<=hexnumsignal;
+ 
+--hexnum<=hexnumsignal;
 
-addnum2buff: process(clk) is
-    variable i: integer range 0 to 4;
+addnum2buff: process(clk,clearsignal) is
+    variable i:integer;
     begin
-        if clearsignal='1'then
+        if clearsignal='1' then
         i:=0;
+        buffready<='0';
         stack_num(0)<="00000";
         stack_num(1)<="00000";
         stack_num(2)<="00000";
         stack_num(3)<="00000"; 
+        
         elsif rising_edge(clk) then
-            if hexnumsignal(4) = '1' and hexnumantes(4) = '0' and i<4 then
+            if hexnumsignal(4) = '1' and hexnumantes(4) = '0' and buff_ptr<4 then
                 stack_num(i)<=hexnumsignal;
-            elsif hexnumsignal(4) = '0' and hexnumantes(4) = '1' and i<4 then
+            elsif hexnumsignal(4) = '0' and hexnumantes(4) = '1' and buff_ptr<4 then
                 i:=i+1;
+            elsif (i=4) then
+                buffready<='1';
             end if;
             hexnumantes <= hexnumsignal;
+            buff_ptr<=i;
         end if;
     end process;
 
   stackunido<=stack_num(0)&stack_num(1)&stack_num(2)&stack_num(3);
-  
-   connectiondisp: hextodisp 
+  datamem<=stackunido(18 downto 15)&stackunido(13 downto 10)&stackunido(8 downto 5)&stackunido(3 downto 0);
+  connectiondisp: hextodisp 
     port map ( clk =>clk,
-           rst =>'0',
+           rst =>reset,
            segment =>segment,
            display =>display,
            buff =>stackunido
            );
+    processtopush: process(clk,pushsignal,reset) is begin
+        
+    if(reset='1') then
+        stack_ptr<=0;
+        full<='0';
+        empty<='1';
+    elsif(rising_edge(clk)) then
+        if(stack_ptr=255) then 
+                full<='1';
+                empty<='0';
+        else
+                full<='0';
+        end if;
+        if(stack_ptr=0) then 
+                full<='0';
+                empty<='1';
+        else
+                empty<='0';
+        end if;        
+        
+        if(pushsignal='1' and pushsignalprev='0' and buffready='1' and full='0') then
+            stack_mem(stack_ptr)<=datamem;
+        elsif(pushsignal='0' and pushsignalprev='1') then
+            stack_ptr<=stack_ptr+1;
+            buffready<='0';
+            stack_num(0)<="00000";
+            stack_num(1)<="00000";
+            stack_num(2)<="00000";
+            stack_num(3)<="00000"; 
+            buff_ptr<=0;
+        end if;
+        
+        if(popsignal='0' and popsignalprev='1'and empty='0') then
+            stack_ptr<=stack_ptr-1;
+        end if;
+        popsignalprev<=popsignal;
+        pushsignalprev<=pushsignal;
+    end if;
+    end process; 
+    
+--    processtopop: process(clk,popsignal,reset) is begin
+--    if(reset='1') then
+--        stack_ptr<=0;
+--        full<='0';
+--        empty<='1';
+--        popsignalprev<='0';
+--    elsif(rising_edge(clk)) then
+--        if(stack_ptr=0) then 
+--                full<='0';
+--                empty<='1';
+--        else
+--                empty<='0';
+--        end if;
+--        if(popsignal='0' and popsignalprev='1'and empty='0') then
+--            stack_ptr<=stack_ptr-1;
+--        end if;
+--        popsignalprev<=popsignal;
+--    end if;
+--    end process; 
+    
+    space<=std_logic_vector(to_unsigned(stack_ptr, 8));
+    
+    
+    
+  
+   
  
 END logic;

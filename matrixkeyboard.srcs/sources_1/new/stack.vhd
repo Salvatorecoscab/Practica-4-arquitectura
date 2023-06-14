@@ -15,7 +15,7 @@ entity stack is port(  Clk:in std_logic; --Clockforthestack.
                     Reset:in std_logic;--activehighreset.
                     Enable:in std_logic; --Enablethestack.Otherwiseneitherpushnorpopwillhappen. 
                     Data_In:in std_logic_vector(15 downto 0); --Datatobepushedtostack
-                    Data_Out:out std_logic_vector(15 downto 0); --Datapoppedfromthestack. 
+                    Data_Out:out std_logic_vector(7 downto 0); --position of the pointer in binary. 
                     PUSH_barPOP:in std_logic; --activelowforPOPandactivehighforPUSH. 
                     Stack_Full:out std_logic; --Goeshighwhenthestackisfull.
                     Stack_Empty:out std_logic --Goeshighwhenthestackisempty.
@@ -34,17 +34,17 @@ Stack_Empty<=empty;--PUSHandPOPprocessforthestack.
     variable stack_ptr:integer:=255;
     begin
     if(reset='1') then 
-    stack_ptr:=255; --stackgrowsdownwards. 
+    stack_ptr:=255; --stack grows downwards. 
     full<='0';
     empty<='0';
-    Data_out<=(others=>'0');
+--    Data_out<=(others=>'0');
     prev_PP<='0';
-    elsif(rising_edge(Clk)) then--valueofPUSH_barPOPwithoneclockcycledelay.
+    elsif(rising_edge(Clk)) then--value of PUSH_barPOP with one clock cycle delay.
     if(Enable='1') then 
     prev_PP<=PUSH_barPOP;
     else
     prev_PP<='0';
-    end if;--POPsection.
+    end if;--POP section.
     if(Enable='1' and PUSH_barPOP='0'and empty='0') then--settingemptyflag.
         if(stack_ptr=255) then 
         full<='0';
@@ -52,15 +52,15 @@ Stack_Empty<=empty;--PUSHandPOPprocessforthestack.
         else
         full<='0';
         empty<='0';
-        end if;--whenthepushbecomespop,beforestackisfull.
+        end if;--when the push becomes pop,before stack is full.
         if(prev_PP='1' and full='0') then 
         stack_ptr:=stack_ptr+1;
-        end if;--Datahastobetakenfromthenexthighestaddress(emptydescendingtypestack).
-        Data_Out<=stack_mem(stack_ptr);
+        end if;--Data has to be taken from the next highest address(empty descending types tack).
+--        Data_Out<=stack_mem(stack_ptr);
         if(stack_ptr/=255) then 
         stack_ptr:=stack_ptr+1;
         end if;
-        end if;--PUSHsection.
+        end if;--PUSH section.
         if(Enable='1'and PUSH_barPOP='1'and full='0') then--settingfullflag.
             if(stack_ptr=0) then 
             full<='1';
@@ -77,7 +77,8 @@ Stack_Empty<=empty;--PUSHandPOPprocessforthestack.
             stack_ptr:=stack_ptr-1;
             end if;
             end if;
-            SP<=stack_ptr; --fordebugging/simulation.
+            Data_out<=std_logic_vector(to_unsigned(stack_ptr, 8));
+--            SP<=stack_ptr; --fordebugging/simulation.
             end if;
             end process;
             end Behavioral;

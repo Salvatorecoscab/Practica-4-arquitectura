@@ -3,15 +3,15 @@
     with args -log pmod_keypad.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pmod_keypad.tcl
 
 
-
 ****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
   **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source pmod_keypad.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1553.332 ; gain = 27.152 ; free physical = 1270 ; free virtual = 4587
+Command: read_checkpoint -auto_incremental -incremental /home/user/matrixkeyboard/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/user/matrixkeyboard/matrixkeyboard.srcs/utils_1/imports/synth_1/pmod_keypad.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top pmod_keypad -part xc7a35tcpg236-1
 Starting synth_design
@@ -20,238 +20,283 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1692
-INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-7075] Helper process launched with PID 18034
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/home/user/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1192.766 ; gain = 408.594
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2307.934 ; gain = 378.012 ; free physical = 483 ; free virtual = 3800
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1500.871; parent = 1491.912; children = 8.959
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2777.188; parent = 2307.969; children = 469.219
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'pmod_keypad' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'pmod_keypad' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:21]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
-INFO: [Synth 8-638] synthesizing module 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
+INFO: [Synth 8-638] synthesizing module 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debounce' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'debounce' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:15]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:277]
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_keys' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
 	Parameter clk_freq bound to: 100000000 - type: integer 
 	Parameter stable_time bound to: 10 - type: integer 
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_clear' of component 'debounce' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:281]
-INFO: [Synth 8-3491] module 'decoderkeys' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:34' bound to instance 'calldecoder' of component 'decoderkeys' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:283]
-INFO: [Synth 8-638] synthesizing module 'decoderkeys' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
-INFO: [Synth 8-256] done synthesizing module 'decoderkeys' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
-WARNING: [Synth 8-614] signal 'clearsignal' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:328]
-INFO: [Synth 8-3491] module 'hextodisp' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:6' bound to instance 'connectiondisp' of component 'hextodisp' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:349]
-INFO: [Synth 8-638] synthesizing module 'hextodisp' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:15]
-INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:48]
-WARNING: [Synth 8-614] signal 'num1' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
-WARNING: [Synth 8-614] signal 'num2' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
-WARNING: [Synth 8-614] signal 'num3' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
-WARNING: [Synth 8-614] signal 'num4' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
-INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'unity' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:71]
-INFO: [Synth 8-638] synthesizing module 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:32]
-INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:37]
-WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'BinaryTo7Segments' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:32]
-INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'tens' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:75]
-INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'hund' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:79]
-INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'mil' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:83]
-INFO: [Synth 8-256] done synthesizing module 'hextodisp' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'pmod_keypad' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:20]
-WARNING: [Synth 8-3848] Net hexnum in module/entity pmod_keypad does not have driver. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:14]
-WARNING: [Synth 8-7129] Port hexnum[4] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[3] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[2] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[1] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[0] in module pmod_keypad is either unconnected or has no load
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_clear' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:285]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_push' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:287]
+	Parameter clk_freq bound to: 100000000 - type: integer 
+	Parameter stable_time bound to: 10 - type: integer 
+INFO: [Synth 8-3491] module 'debounce' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/debounce.vhd:4' bound to instance 'debounce_pop' of component 'debounce' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:289]
+INFO: [Synth 8-3491] module 'decoderkeys' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:34' bound to instance 'calldecoder' of component 'decoderkeys' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:292]
+INFO: [Synth 8-638] synthesizing module 'decoderkeys' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'decoderkeys' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/decoderkeys.vhd:41]
+INFO: [Synth 8-3491] module 'hextodisp' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:6' bound to instance 'connectiondisp' of component 'hextodisp' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:324]
+INFO: [Synth 8-638] synthesizing module 'hextodisp' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:15]
+INFO: [Synth 8-226] default block is never used [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:48]
+WARNING: [Synth 8-614] signal 'num1' is read in the process but is not in the sensitivity list [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
+WARNING: [Synth 8-614] signal 'num2' is read in the process but is not in the sensitivity list [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
+WARNING: [Synth 8-614] signal 'num3' is read in the process but is not in the sensitivity list [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
+WARNING: [Synth 8-614] signal 'num4' is read in the process but is not in the sensitivity list [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:46]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'unity' of component 'BinaryTo7Segments' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'BinaryTo7Segments' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:32]
+INFO: [Synth 8-226] default block is never used [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:37]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'BinaryTo7Segments' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:32]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'tens' of component 'BinaryTo7Segments' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:75]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'hund' of component 'BinaryTo7Segments' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:79]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at '/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'mil' of component 'BinaryTo7Segments' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:83]
+INFO: [Synth 8-256] done synthesizing module 'hextodisp' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/hextodisp.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'pmod_keypad' (0#1) [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element stack_mem_reg was removed. 
+WARNING: [Synth 8-7129] Port read in module pmod_keypad is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1287.066 ; gain = 502.895
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2383.109 ; gain = 453.188 ; free physical = 502 ; free virtual = 3820
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1528.322; parent = 1491.912; children = 144.971
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3587.840; parent = 2383.109; children = 1204.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1287.066 ; gain = 502.895
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2401.578 ; gain = 471.656 ; free physical = 453 ; free virtual = 3771
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1583.428; parent = 1491.912; children = 202.556
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3658.344; parent = 2401.578; children = 1256.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1287.066 ; gain = 502.895
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2401.578 ; gain = 471.656 ; free physical = 452 ; free virtual = 3770
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1583.428; parent = 1491.912; children = 202.556
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3658.570; parent = 2401.578; children = 1256.992
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1287.066 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2402.238 ; gain = 0.051 ; free physical = 441 ; free virtual = 3758
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
-WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
+Parsing XDC File [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
+WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:9]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:10]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:11]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:12]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:13]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:14]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:15]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:16]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:17]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:18]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:19]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:20]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:21]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:22]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:23]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:24]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'keys[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:31]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'keys[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:32]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'keys[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:33]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'keys[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:34]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'keys[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:35]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'keys[5]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:36]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'keys[6]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:37]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'keys[7]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:38]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'keys[8]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:39]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'keys[9]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:40]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'keys[10]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:41]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'keys[11]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:42]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'keys[12]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:43]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'keys[15]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:44]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'keys[14]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:45]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'keys[13]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:46]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-Finished Parsing XDC File [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pmod_keypad_propImpl.xdc].
+WARNING: [Vivado 12-584] No ports matched 'hexnum[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[4]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[3]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[2]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[1]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hexnum[0]'. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/user/matrixkeyboard/matrixkeyboard.srcs/constrs_1/new/pins.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pmod_keypad_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/pmod_keypad_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1329.895 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2537.473 ; gain = 0.000 ; free physical = 242 ; free virtual = 3559
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1329.895 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2537.535 ; gain = 0.047 ; free physical = 242 ; free virtual = 3559
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/home/user/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2544.375 ; gain = 614.453 ; free physical = 275 ; free virtual = 3593
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1775.940; parent = 1491.912; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3985.648; parent = 2544.375; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2544.500 ; gain = 614.578 ; free physical = 275 ; free virtual = 3593
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1776.405; parent = 1491.912; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3985.773; parent = 2544.500; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2544.551 ; gain = 614.629 ; free physical = 276 ; free virtual = 3594
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1776.405; parent = 1491.912; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3985.824; parent = 2544.551; children = 1441.273
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'columns_reg' in module 'pmod_keypad'
 ---------------------------------------------------------------------------------------------------
@@ -271,28 +316,29 @@ INFO: [Synth 8-802] inferred FSM for state register 'columns_reg' in module 'pmo
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'columns_reg' using encoding 'one-hot' in module 'pmod_keypad'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 2546.027 ; gain = 616.105 ; free physical = 263 ; free virtual = 3581
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1792.618; parent = 1491.912; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3987.301; parent = 2546.027; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   32 Bit       Adders := 1     
 	   2 Input   17 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
 	  16 Input    5 Bit       Adders := 1     
-	   2 Input    3 Bit       Adders := 1     
 	   2 Input    2 Bit       Adders := 1     
 +---XORs : 
-	   2 Input      1 Bit         XORs := 17    
+	   2 Input      1 Bit         XORs := 19    
 +---Registers : 
 	               17 Bit    Registers := 1     
 	               16 Bit    Registers := 3     
-	                5 Bit    Registers := 6     
+	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 18    
-	                1 Bit    Registers := 17    
+	                2 Bit    Registers := 20    
+	                1 Bit    Registers := 23    
 +---Muxes : 
 	   2 Input   17 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 27    
@@ -326,31 +372,35 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port hexnum[4] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[3] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[2] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[1] in module pmod_keypad is either unconnected or has no load
-WARNING: [Synth 8-7129] Port hexnum[0] in module pmod_keypad is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read in module pmod_keypad is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2547.508 ; gain = 617.586 ; free physical = 239 ; free virtual = 3561
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1818.841; parent = 1491.912; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3988.781; parent = 2547.508; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2591.656 ; gain = 661.734 ; free physical = 87 ; free virtual = 3377
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2010.376; parent = 1662.849; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4032.930; parent = 2591.656; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 2591.684 ; gain = 661.762 ; free physical = 87 ; free virtual = 3377
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2010.696; parent = 1663.169; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4032.957; parent = 2591.684; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2591.902 ; gain = 661.980 ; free physical = 90 ; free virtual = 3362
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2014.024; parent = 1666.497; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.176; parent = 2591.902; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -368,37 +418,157 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.051 ; gain = 662.129 ; free physical = 90 ; free virtual = 3362
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.286; parent = 1667.759; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.324; parent = 2592.051; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.066 ; gain = 662.145 ; free physical = 90 ; free virtual = 3362
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.364; parent = 1667.837; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.340; parent = 2592.066; children = 1441.273
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[31] with 1st driver pin 'buff_ptr_reg[31]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[31] with 2nd driver pin 'buff_ptr_reg[31]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[30] with 1st driver pin 'buff_ptr_reg[30]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[30] with 2nd driver pin 'buff_ptr_reg[30]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[29] with 1st driver pin 'buff_ptr_reg[29]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[29] with 2nd driver pin 'buff_ptr_reg[29]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[28] with 1st driver pin 'buff_ptr_reg[28]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[28] with 2nd driver pin 'buff_ptr_reg[28]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[27] with 1st driver pin 'buff_ptr_reg[27]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[27] with 2nd driver pin 'buff_ptr_reg[27]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[26] with 1st driver pin 'buff_ptr_reg[26]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[26] with 2nd driver pin 'buff_ptr_reg[26]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[25] with 1st driver pin 'buff_ptr_reg[25]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[25] with 2nd driver pin 'buff_ptr_reg[25]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[24] with 1st driver pin 'buff_ptr_reg[24]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[24] with 2nd driver pin 'buff_ptr_reg[24]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[23] with 1st driver pin 'buff_ptr_reg[23]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[23] with 2nd driver pin 'buff_ptr_reg[23]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[22] with 1st driver pin 'buff_ptr_reg[22]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[22] with 2nd driver pin 'buff_ptr_reg[22]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[21] with 1st driver pin 'buff_ptr_reg[21]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[21] with 2nd driver pin 'buff_ptr_reg[21]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[20] with 1st driver pin 'buff_ptr_reg[20]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[20] with 2nd driver pin 'buff_ptr_reg[20]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[19] with 1st driver pin 'buff_ptr_reg[19]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[19] with 2nd driver pin 'buff_ptr_reg[19]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[18] with 1st driver pin 'buff_ptr_reg[18]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[18] with 2nd driver pin 'buff_ptr_reg[18]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[17] with 1st driver pin 'buff_ptr_reg[17]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[17] with 2nd driver pin 'buff_ptr_reg[17]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[16] with 1st driver pin 'buff_ptr_reg[16]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[16] with 2nd driver pin 'buff_ptr_reg[16]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[15] with 1st driver pin 'buff_ptr_reg[15]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[15] with 2nd driver pin 'buff_ptr_reg[15]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[14] with 1st driver pin 'buff_ptr_reg[14]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[14] with 2nd driver pin 'buff_ptr_reg[14]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[13] with 1st driver pin 'buff_ptr_reg[13]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[13] with 2nd driver pin 'buff_ptr_reg[13]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[12] with 1st driver pin 'buff_ptr_reg[12]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[12] with 2nd driver pin 'buff_ptr_reg[12]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[11] with 1st driver pin 'buff_ptr_reg[11]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[11] with 2nd driver pin 'buff_ptr_reg[11]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[10] with 1st driver pin 'buff_ptr_reg[10]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[10] with 2nd driver pin 'buff_ptr_reg[10]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[9] with 1st driver pin 'buff_ptr_reg[9]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[9] with 2nd driver pin 'buff_ptr_reg[9]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[8] with 1st driver pin 'buff_ptr_reg[8]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[8] with 2nd driver pin 'buff_ptr_reg[8]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[7] with 1st driver pin 'buff_ptr_reg[7]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[7] with 2nd driver pin 'buff_ptr_reg[7]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[6] with 1st driver pin 'buff_ptr_reg[6]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[6] with 2nd driver pin 'buff_ptr_reg[6]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[5] with 1st driver pin 'buff_ptr_reg[5]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[5] with 2nd driver pin 'buff_ptr_reg[5]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[4] with 1st driver pin 'buff_ptr_reg[4]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[4] with 2nd driver pin 'buff_ptr_reg[4]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[3] with 1st driver pin 'buff_ptr_reg[3]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[3] with 2nd driver pin 'buff_ptr_reg[3]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[2] with 1st driver pin 'buff_ptr_reg[2]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[2] with 2nd driver pin 'buff_ptr_reg[2]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[1] with 1st driver pin 'buff_ptr_reg[1]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[1] with 2nd driver pin 'buff_ptr_reg[1]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[0] with 1st driver pin 'buff_ptr_reg[0]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:303]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin buff_ptr[0] with 2nd driver pin 'buff_ptr_reg[0]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:360]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][0] with 1st driver pin 'stack_num_reg[3][0]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][0] with 2nd driver pin 'stack_num_reg[3][0]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][1] with 1st driver pin 'stack_num_reg[3][1]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][1] with 2nd driver pin 'stack_num_reg[3][1]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][2] with 1st driver pin 'stack_num_reg[3][2]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][2] with 2nd driver pin 'stack_num_reg[3][2]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][3] with 1st driver pin 'stack_num_reg[3][3]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][3] with 2nd driver pin 'stack_num_reg[3][3]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][4] with 1st driver pin 'stack_num_reg[3][4]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[3][4] with 2nd driver pin 'stack_num_reg[3][4]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][0] with 1st driver pin 'stack_num_reg[2][0]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][0] with 2nd driver pin 'stack_num_reg[2][0]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][1] with 1st driver pin 'stack_num_reg[2][1]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][1] with 2nd driver pin 'stack_num_reg[2][1]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][2] with 1st driver pin 'stack_num_reg[2][2]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][2] with 2nd driver pin 'stack_num_reg[2][2]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][3] with 1st driver pin 'stack_num_reg[2][3]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][3] with 2nd driver pin 'stack_num_reg[2][3]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][4] with 1st driver pin 'stack_num_reg[2][4]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[2][4] with 2nd driver pin 'stack_num_reg[2][4]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][0] with 1st driver pin 'stack_num_reg[1][0]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][0] with 2nd driver pin 'stack_num_reg[1][0]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][1] with 1st driver pin 'stack_num_reg[1][1]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][1] with 2nd driver pin 'stack_num_reg[1][1]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][2] with 1st driver pin 'stack_num_reg[1][2]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][2] with 2nd driver pin 'stack_num_reg[1][2]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][3] with 1st driver pin 'stack_num_reg[1][3]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][3] with 2nd driver pin 'stack_num_reg[1][3]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][4] with 1st driver pin 'stack_num_reg[1][4]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[1][4] with 2nd driver pin 'stack_num_reg[1][4]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][0] with 1st driver pin 'stack_num_reg[0][0]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][0] with 2nd driver pin 'stack_num_reg[0][0]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][1] with 1st driver pin 'stack_num_reg[0][1]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][1] with 2nd driver pin 'stack_num_reg[0][1]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][2] with 1st driver pin 'stack_num_reg[0][2]/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:322]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin stack_num[0][2] with 2nd driver pin 'stack_num_reg[0][2]__0/Q' [/home/user/matrixkeyboard/matrixkeyboard.srcs/sources_1/new/pmod_keypad.vhd:305]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       52|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.133 ; gain = 662.211 ; free physical = 89 ; free virtual = 3361
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.798; parent = 1668.271; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.406; parent = 2592.133; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.141 ; gain = 662.219 ; free physical = 89 ; free virtual = 3361
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2015.868; parent = 1668.341; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.414; parent = 2592.141; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.164 ; gain = 662.242 ; free physical = 89 ; free virtual = 3361
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2016.009; parent = 1668.481; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.438; parent = 2592.164; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.168 ; gain = 662.246 ; free physical = 89 ; free virtual = 3361
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2016.024; parent = 1668.497; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.441; parent = 2592.168; children = 1441.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -415,44 +585,45 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    89|
-|3     |LUT1   |    19|
-|4     |LUT2   |    67|
-|5     |LUT3   |    29|
-|6     |LUT4   |    57|
-|7     |LUT5   |    62|
-|8     |LUT6   |    94|
+|2     |CARRY4 |   119|
+|3     |LUT1   |    21|
+|4     |LUT2   |   101|
+|5     |LUT3   |    62|
+|6     |LUT4   |   109|
+|7     |LUT5   |    68|
+|8     |LUT6   |   109|
 |9     |MUXF7  |    14|
 |10    |MUXF8  |     7|
-|11    |FDCE   |   116|
-|12    |FDPE   |     1|
-|13    |FDRE   |   385|
-|14    |IBUF   |     7|
-|15    |OBUF   |    15|
-|16    |OBUFT  |     5|
+|11    |FDCE   |   200|
+|12    |FDPE   |     2|
+|13    |FDRE   |   462|
+|14    |IBUF   |     9|
+|15    |OBUF   |    23|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2592.188 ; gain = 662.266 ; free physical = 89 ; free virtual = 3361
+Synthesis current peak Physical Memory [PSS] (MB): peak = 2016.130; parent = 1668.603; children = 347.727
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 4033.461; parent = 2592.188; children = 1441.273
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:19 . Memory (MB): peak = 1329.895 ; gain = 502.895
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1329.895 ; gain = 545.723
+Synthesis finished with 0 errors, 104 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2592.223 ; gain = 525.992 ; free physical = 144 ; free virtual = 3416
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 2592.250 ; gain = 662.301 ; free physical = 144 ; free virtual = 3416
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1329.895 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2592.723 ; gain = 0.004 ; free physical = 369 ; free virtual = 3641
+INFO: [Netlist 29-17] Analyzing 140 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1336.309 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2594.668 ; gain = 0.000 ; free physical = 310 ; free virtual = 3582
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: b8d33bac
+Synth Design complete, checksum: 51f53dd
 INFO: [Common 17-83] Releasing license: Synthesis
-60 Infos, 50 Warnings, 32 Critical Warnings and 0 Errors encountered.
+63 Infos, 51 Warnings, 142 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1336.309 ; gain = 930.449
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 2594.719 ; gain = 1016.344 ; free physical = 510 ; free virtual = 3783
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.runs/synth_1/pmod_keypad.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/user/matrixkeyboard/matrixkeyboard.runs/synth_1/pmod_keypad.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file pmod_keypad_utilization_synth.rpt -pb pmod_keypad_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 13 04:18:10 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 13 23:17:58 2023...

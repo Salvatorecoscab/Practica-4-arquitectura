@@ -138,7 +138,7 @@ OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.runs/synth_1/pmod_keypad.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc
+  read_xdc C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/piness.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

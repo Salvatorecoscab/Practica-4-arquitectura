@@ -2,3 +2,6 @@ Running: xsim.dir/pmod_keypad_behav/xsimk.exe -simmode gui -wdb pmod_keypad_beha
 Design successfully loaded
 Design Loading Memory Usage: 8512 KB (Peak: 8512 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 11732 KB (Peak: 11732 KB)
+Simulation CPU Usage: 46 ms

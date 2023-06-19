@@ -1,0 +1,345 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Jun 19 00:55:16 2023
+# Process ID: 9368
+# Current directory: C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.runs/synth_1
+# Command line: vivado.exe -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.runs/synth_1/main.vds
+# Journal file: C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.runs/synth_1\vivado.jou
+# Running On: Salvatore, OS: Windows, CPU Frequency: 3693 MHz, CPU Physical cores: 12, Host memory: 17120 MB
+#-----------------------------------------------------------
+source main.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/utils_1/imports/synth_1/main.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top main -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26584
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1192.359 ; gain = 408.523
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:15]
+WARNING: [Synth 8-614] signal 'enable_cmp' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:510]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:585]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:588]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:645]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:684]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:698]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:785]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:792]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:843]
+INFO: [Synth 8-3491] module 'bintodisp' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:6' bound to instance 'dispacccon' of component 'bintodisp' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:868]
+INFO: [Synth 8-638] synthesizing module 'bintodisp' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:15]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:53]
+WARNING: [Synth 8-614] signal 'num1' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:51]
+WARNING: [Synth 8-614] signal 'num2' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:51]
+WARNING: [Synth 8-614] signal 'num3' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:51]
+WARNING: [Synth 8-614] signal 'num4' is read in the process but is not in the sensitivity list [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:51]
+INFO: [Synth 8-3491] module 'binBCD' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/binBCD.vhd:27' bound to instance 'BintoBCD' of component 'binBCD' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:74]
+INFO: [Synth 8-638] synthesizing module 'binBCD' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/binBCD.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'binBCD' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/binBCD.vhd:34]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'unity' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:78]
+INFO: [Synth 8-638] synthesizing module 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:30]
+INFO: [Synth 8-226] default block is never used [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'BinaryTo7Segments' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:30]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'tens' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:81]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'hund' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:84]
+INFO: [Synth 8-3491] module 'BinaryTo7Segments' declared at 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/BinaryTo7Segments.vhd:25' bound to instance 'mil' of component 'BinaryTo7Segments' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:87]
+INFO: [Synth 8-256] done synthesizing module 'bintodisp' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/imports/components/bintodisp.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'main' (0#1) [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:15]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:532]
+WARNING: [Synth 8-6014] Unused sequential element clk_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:533]
+WARNING: [Synth 8-6014] Unused sequential element rg1_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:823]
+WARNING: [Synth 8-6014] Unused sequential element rg2_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:824]
+WARNING: [Synth 8-6014] Unused sequential element rg3_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:825]
+WARNING: [Synth 8-6014] Unused sequential element rg4_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:826]
+WARNING: [Synth 8-6014] Unused sequential element pcsig_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:827]
+WARNING: [Synth 8-6014] Unused sequential element ret_sig_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:828]
+WARNING: [Synth 8-6014] Unused sequential element equal_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:829]
+WARNING: [Synth 8-6014] Unused sequential element estado_reg was removed.  [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:830]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1318.043 ; gain = 534.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1318.043 ; gain = 534.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1318.043 ; gain = 534.207
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1318.043 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/constrs_1/new/pinesCarlos.xdc]
+Finished Parsing XDC File [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/constrs_1/new/pinesCarlos.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/constrs_1/new/pinesCarlos.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1387.055 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1387.055 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1387.055 ; gain = 603.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1387.055 ; gain = 603.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1387.055 ; gain = 603.219
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'sal_reg' and it is trimmed from '16' to '12' bits. [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:646]
+INFO: [Synth 8-802] inferred FSM for state register 'sig_reg' in module 'main'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                            00000 |                            00000
+                   fetch |                            00001 |                            00001
+                  decode |                            00010 |                            00010
+               operation |                            00011 |                            00110
+              operation1 |                            00100 |                            00111
+                    load |                            00101 |                            00011
+                   load1 |                            00110 |                            00100
+                intrujmp |                            00111 |                            01010
+                     jmp |                            01000 |                            01011
+                    jalr |                            01001 |                            01100
+                   jalr2 |                            01010 |                            01101
+                     bnz |                            01011 |                            10000
+                    bnz2 |                            01100 |                            10101
+                      bs |                            01101 |                            10011
+                     bs2 |                            01110 |                            10110
+                     bnc |                            01111 |                            01111
+                     bnv |                            10000 |                            10001
+                     ret |                            10001 |                            10100
+                    leds |                            10010 |                            10111
+              leds_clear |                            10011 |                            11000
+                    send |                            10100 |                            01001
+                    comp |                            10101 |                            01110
+                 endprog |                            10110 |                            01000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'sig_reg' using encoding 'sequential' in module 'main'
+WARNING: [Synth 8-327] inferring latch for variable 'e_reg' [C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.srcs/sources_1/new/main.vhd:517]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 1387.055 ; gain = 603.219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   17 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 33    
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 76    
+	   3 Input      1 Bit         XORs := 256   
++---Registers : 
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	               12 Bit    Registers := 2     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   17 Bit        Muxes := 1     
+	 256 Input   16 Bit        Muxes := 2     
+	   4 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 7     
+	  23 Input   16 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 15    
+	  23 Input    8 Bit        Muxes := 3     
+	   4 Input    7 Bit        Muxes := 1     
+	  23 Input    5 Bit        Muxes := 3     
+	  16 Input    5 Bit        Muxes := 1     
+	  10 Input    5 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 32    
+	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	  16 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 4     
+	  11 Input    1 Bit        Muxes := 2     
+	  23 Input    1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (e_reg[16]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[15]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[14]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[13]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[12]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[11]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[10]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[9]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[8]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[7]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[6]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[5]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[4]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[3]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[2]) is unused and will be removed from module main.
+WARNING: [Synth 8-3332] Sequential element (e_reg[1]) is unused and will be removed from module main.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:39 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    33|
+|3     |LUT1   |     5|
+|4     |LUT2   |    73|
+|5     |LUT3   |    75|
+|6     |LUT4   |   186|
+|7     |LUT5   |   165|
+|8     |LUT6   |   511|
+|9     |MUXF7  |    12|
+|10    |MUXF8  |     1|
+|11    |FDRE   |   230|
+|12    |IBUF   |     4|
+|13    |OBUF   |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 1523.109 ; gain = 739.273
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:41 . Memory (MB): peak = 1523.109 ; gain = 670.262
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:43 . Memory (MB): peak = 1523.109 ; gain = 739.273
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1523.109 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'main' is not ideal for floorplanning, since the cellview 'main' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1523.109 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 2040b134
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 35 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:46 . Memory (MB): peak = 1523.109 ; gain = 1117.445
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/p2Carlos/p2Carlos.runs/synth_1/main.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 19 00:56:08 2023...

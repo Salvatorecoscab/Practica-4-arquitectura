@@ -102,8 +102,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc
-set_property used_in_implementation false [get_files C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/pins.xdc]
+read_xdc C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/piness.xdc
+set_property used_in_implementation false [get_files C:/Users/Salvadorcoscab/Documents/vhdlPracticas/Practica-4-arquitectura/matrixkeyboard.srcs/constrs_1/new/piness.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 

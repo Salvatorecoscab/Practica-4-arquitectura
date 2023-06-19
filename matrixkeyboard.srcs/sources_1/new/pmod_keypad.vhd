@@ -1,6 +1,7 @@
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
 ENTITY pmod_keypad IS
   GENERIC(
@@ -11,10 +12,11 @@ ENTITY pmod_keypad IS
     reset_n :  IN     STD_LOGIC;                           --asynchornous active-low reset
     rows    :  IN     STD_LOGIC_VECTOR(1 TO 4);            --row connections to keypad
     columns :  BUFFER STD_LOGIC_VECTOR(1 TO 4) := "1111";  --column connections to keypad
-    hexnum    :  OUT    STD_LOGIC_VECTOR(4 DOWNTO 0);          --resultant hex num
+    SP    :  OUT    STD_LOGIC_VECTOR(7 DOWNTO 0);          --resultant hex num
     clear : in std_logic;
     segment : out  STD_LOGIC_VECTOR (6 downto 0);
-    display : out  STD_LOGIC_VECTOR (3 downto 0));
+    display : out  STD_LOGIC_VECTOR (3 downto 0);
+    push,pop: in std_logic);
 END pmod_keypad;
 
 ARCHITECTURE logic OF pmod_keypad IS
@@ -30,6 +32,9 @@ ARCHITECTURE logic OF pmod_keypad IS
   signal stack_num:num:=(others=>(others=>'0'));
   signal stackunido: std_logic_vector(19 downto 0);
   signal hexnumantes: std_logic_vector(4 downto 0):=(others=>'0');
+  signal ptri: INTEGER:=0;
+  signal stack_num_done: std_logic:='0';
+  signal reset: std_logic;
   --declare debouncer componxent
   COMPONENT debounce IS 
     GENERIC(
@@ -55,18 +60,10 @@ ARCHITECTURE logic OF pmod_keypad IS
            buff: in  STD_LOGIC_VECTOR (19 downto 0)
            );
 end component;
-   component stack is port(  Clk:in std_logic; --Clockforthestack.
-                    Reset:in std_logic;--activehighreset.
-                    Enable:in std_logic; --Enablethestack.Otherwiseneitherpushnorpopwillhappen. 
-                    Data_In:in std_logic_vector(15 downto 0); --Datatobepushedtostack
-                    Data_Out:out std_logic_vector(15 downto 0); --Datapoppedfromthestack. 
-                    PUSH_barPOP:in std_logic; --activelowforPOPandactivehighforPUSH. 
-                    Stack_Full:out std_logic; --Goeshighwhenthestackisfull.
-                    Stack_Empty:out std_logic --Goeshighwhenthestackisempty.
-                    );
-end component;
 
-
+type mem_type is array(0 to 255) of std_logic_vector(15 downto 0);
+signal stack_mem:mem_type:=(others=>(others=>'0'));
+signal full,empty,pushsignal,popsignal,pushantes,popantes:std_logic:='0';
 BEGIN
   
   --synchronizer flip-flops
@@ -271,7 +268,7 @@ BEGIN
       END IF;  
     END IF;
   END PROCESS;
-
+   reset<= not reset_n;
   --debounce key press results
   row_debounce: FOR i IN 0 TO 15 GENERATE
     debounce_keys: debounce
@@ -280,26 +277,36 @@ BEGIN
   END GENERATE;
   debounce_clear: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
       PORT MAP(clk => clk, reset_n => reset_n, button => clear, result => clearsignal);
+  debounce_push: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
+      PORT MAP(clk => clk, reset_n => reset_n, button => push, result => pushsignal);
+  debounce_pop: debounce GENERIC MAP(clk_freq => clk_freq, stable_time => stable_time)
+      PORT MAP(clk => clk, reset_n => reset_n, button => pop, result => popsignal);
   calldecoder: decoderkeys port map(
     keycode=>keyssignal,
     numEn=>hexnumsignal --hexnumsignal has 5 bits one is for enable
  );
-hexnum<=hexnumsignal;
+--hexnum<=hexnumsignal;
 
 addnum2buff: process(clk) is
-    variable i: integer range 0 to 4;
+--    variable i: integer range 0 to 4;
     begin
-        if clearsignal='1'then
-        i:=0;
+        if clearsignal='1' or reset='1'  then
+        ptri<=0;
         stack_num(0)<="00000";
         stack_num(1)<="00000";
         stack_num(2)<="00000";
         stack_num(3)<="00000"; 
+        stack_num_done<='0';
+        
         elsif rising_edge(clk) then
-            if hexnumsignal(4) = '1' and hexnumantes(4) = '0' and i<4 then
-                stack_num(i)<=hexnumsignal;
-            elsif hexnumsignal(4) = '0' and hexnumantes(4) = '1' and i<4 then
-                i:=i+1;
+            if hexnumsignal(4) = '1' and hexnumantes(4) = '0' and ptri<4 then
+                stack_num(ptri)<=hexnumsignal;
+            elsif hexnumsignal(4) = '0' and hexnumantes(4) = '1' and ptri<4 then
+                ptri<=ptri+1;
+            end if;
+            
+            if ptri=4 then 
+            stack_num_done<='1';
             end if;
             hexnumantes <= hexnumsignal;
         end if;
@@ -309,10 +316,62 @@ addnum2buff: process(clk) is
   
    connectiondisp: hextodisp 
     port map ( clk =>clk,
-           rst =>'0',
+           rst =>reset,
            segment =>segment,
            display =>display,
            buff =>stackunido
            );
- 
+           
+ pushpopmem: process(clk,reset) is
+    variable stack_ptr:integer:=0;
+    begin
+        if reset='1'then
+        stack_ptr:=0;  
+        full<='0';
+        empty<='0';
+        
+        elsif rising_edge(clk) then
+                
+                        if(empty='0') then --setting empty flag.
+                                    if(stack_ptr=0) then 
+                                    full<='0';
+                                    empty<='1';
+                                    else
+                                    full<='0';
+                                    empty<='0';
+                                    end if;
+                                    if (popsignal = '0' and popantes='1' and  empty = '0') then
+                                        if(stack_ptr/=0) then 
+                                        stack_ptr:=stack_ptr-1;
+                                        end if;
+                                    end if;
+                                    popantes<=popsignal;
+                        end if;
+                        if stack_num_done='1' then 
+                        if(full='0') then --setting full flag.
+                                    if(stack_ptr=255) then 
+                                    full<='1';
+                                    empty<='0';
+                                    else
+                                    full<='0';
+                                    empty<='0';
+                                    end if;--whenthepopbecomespush,beforestackisempty.
+                                    if pushsignal = '1' and pushantes = '0' and full='0'  then
+                                        stack_mem(stack_ptr)<=(others=>'0');
+                                    elsif pushsignal = '0' and pushantes = '1' then                                       
+                                        stack_ptr:=stack_ptr+1;
+                                    end if;
+                                    pushantes<=pushsignal;
+                        end if;
+                      
+                    
+                    
+                 end if;
+              SP<=std_logic_vector(to_unsigned(stack_ptr,SP'length));
+             
+         end if;
+       
+    end process;
+
+
 END logic;
